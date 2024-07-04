@@ -1,0 +1,1155 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D351CD0E2C2606AC004F44CF /* FetchrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351CD0D2C2606AC004F44CF /* FetchrTests.swift */; };
+		D351CD182C2606AC004F44CF /* FetchrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351CD172C2606AC004F44CF /* FetchrUITests.swift */; };
+		D351CD1A2C2606AC004F44CF /* FetchrUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351CD192C2606AC004F44CF /* FetchrUITestsLaunchTests.swift */; };
+		D3673A972C31140A00EA6A8B /* FetchrWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3673A962C31140A00EA6A8B /* FetchrWatchApp.swift */; };
+		D3673A992C31140A00EA6A8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3673A982C31140A00EA6A8B /* ContentView.swift */; };
+		D3673A9B2C31140B00EA6A8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3673A9A2C31140B00EA6A8B /* Assets.xcassets */; };
+		D3673A9E2C31140B00EA6A8B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3673A9D2C31140B00EA6A8B /* Preview Assets.xcassets */; };
+		D3673AA82C31140B00EA6A8B /* Fetchr_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3673AA72C31140B00EA6A8B /* Fetchr_Watch_AppTests.swift */; };
+		D3673AB22C31140B00EA6A8B /* Fetchr_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3673AB12C31140B00EA6A8B /* Fetchr_Watch_AppUITests.swift */; };
+		D3673AB42C31140B00EA6A8B /* Fetchr_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3673AB32C31140B00EA6A8B /* Fetchr_Watch_AppUITestsLaunchTests.swift */; };
+		D3673AB72C31140B00EA6A8B /* Fetchr Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D3673A942C31140A00EA6A8B /* Fetchr Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D3E57FF02C367DC20089E2F7 /* RequesterMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FDA2C367DC20089E2F7 /* RequesterMethod.swift */; };
+		D3E57FF12C367DC20089E2F7 /* SetupConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FE92C367DC20089E2F7 /* SetupConnectionView.swift */; };
+		D3E57FF22C367DC20089E2F7 /* Requester.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FD92C367DC20089E2F7 /* Requester.swift */; };
+		D3E57FF32C367DC20089E2F7 /* MenuRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FE62C367DC20089E2F7 /* MenuRow.swift */; };
+		D3E57FF42C367DC20089E2F7 /* FetchrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FEE2C367DC20089E2F7 /* FetchrApp.swift */; };
+		D3E57FF52C367DC20089E2F7 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FD82C367DC20089E2F7 /* DateUtil.swift */; };
+		D3E57FF62C367DC20089E2F7 /* HeaderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FDD2C367DC20089E2F7 /* HeaderData.swift */; };
+		D3E57FF72C367DC20089E2F7 /* ConnectionHeaderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FE32C367DC20089E2F7 /* ConnectionHeaderRow.swift */; };
+		D3E57FF82C367DC20089E2F7 /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FE72C367DC20089E2F7 /* NavView.swift */; };
+		D3E57FF92C367DC20089E2F7 /* BodyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FDC2C367DC20089E2F7 /* BodyData.swift */; };
+		D3E57FFA2C367DC20089E2F7 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FE12C367DC20089E2F7 /* AddButton.swift */; };
+		D3E57FFB2C367DC20089E2F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FEC2C367DC20089E2F7 /* ContentView.swift */; };
+		D3E57FFC2C367DC20089E2F7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FE82C367DC20089E2F7 /* SettingsView.swift */; };
+		D3E57FFD2C367DC20089E2F7 /* AutomationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FE22C367DC20089E2F7 /* AutomationView.swift */; };
+		D3E57FFE2C367DC20089E2F7 /* HeaderRowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FE42C367DC20089E2F7 /* HeaderRowData.swift */; };
+		D3E57FFF2C367DC20089E2F7 /* RequesterErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FD42C367DC20089E2F7 /* RequesterErrors.swift */; };
+		D3E580002C367DC20089E2F7 /* HeaderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FDE2C367DC20089E2F7 /* HeaderRow.swift */; };
+		D3E580012C367DC20089E2F7 /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FDF2C367DC20089E2F7 /* RequestData.swift */; };
+		D3E580022C367DC20089E2F7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FE52C367DC20089E2F7 /* HomeView.swift */; };
+		D3E580032C367DC20089E2F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3E57FEB2C367DC20089E2F7 /* Assets.xcassets */; };
+		D3E580042C367DC20089E2F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3E57FD62C367DC20089E2F7 /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D351CD0A2C2606AC004F44CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D351CCEE2C2606AB004F44CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D351CCF52C2606AB004F44CF;
+			remoteInfo = "REST Requester";
+		};
+		D351CD142C2606AC004F44CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D351CCEE2C2606AB004F44CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D351CCF52C2606AB004F44CF;
+			remoteInfo = "REST Requester";
+		};
+		D3673AA42C31140B00EA6A8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D351CCEE2C2606AB004F44CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3673A932C31140A00EA6A8B;
+			remoteInfo = "Athna Watch App";
+		};
+		D3673AAE2C31140B00EA6A8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D351CCEE2C2606AB004F44CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3673A932C31140A00EA6A8B;
+			remoteInfo = "Athna Watch App";
+		};
+		D3673ADB2C34D63700EA6A8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D351CCEE2C2606AB004F44CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3673A932C31140A00EA6A8B;
+			remoteInfo = "Athna Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D3673ABB2C31140B00EA6A8B /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				D3673AB72C31140B00EA6A8B /* Fetchr Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D351CCF62C2606AB004F44CF /* Fetchr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fetchr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D351CD092C2606AC004F44CF /* FetchrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D351CD0D2C2606AC004F44CF /* FetchrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchrTests.swift; sourceTree = "<group>"; };
+		D351CD132C2606AC004F44CF /* FetchrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D351CD172C2606AC004F44CF /* FetchrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchrUITests.swift; sourceTree = "<group>"; };
+		D351CD192C2606AC004F44CF /* FetchrUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchrUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D3673A942C31140A00EA6A8B /* Fetchr Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fetchr Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3673A962C31140A00EA6A8B /* FetchrWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchrWatchApp.swift; sourceTree = "<group>"; };
+		D3673A982C31140A00EA6A8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D3673A9A2C31140B00EA6A8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D3673A9D2C31140B00EA6A8B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D3673AA32C31140B00EA6A8B /* Fetchr Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fetchr Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3673AA72C31140B00EA6A8B /* Fetchr_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetchr_Watch_AppTests.swift; sourceTree = "<group>"; };
+		D3673AAD2C31140B00EA6A8B /* Fetchr Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fetchr Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3673AB12C31140B00EA6A8B /* Fetchr_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetchr_Watch_AppUITests.swift; sourceTree = "<group>"; };
+		D3673AB32C31140B00EA6A8B /* Fetchr_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetchr_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D3E57FD42C367DC20089E2F7 /* RequesterErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequesterErrors.swift; sourceTree = "<group>"; };
+		D3E57FD62C367DC20089E2F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D3E57FD82C367DC20089E2F7 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		D3E57FD92C367DC20089E2F7 /* Requester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requester.swift; sourceTree = "<group>"; };
+		D3E57FDA2C367DC20089E2F7 /* RequesterMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequesterMethod.swift; sourceTree = "<group>"; };
+		D3E57FDC2C367DC20089E2F7 /* BodyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyData.swift; sourceTree = "<group>"; };
+		D3E57FDD2C367DC20089E2F7 /* HeaderData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderData.swift; sourceTree = "<group>"; };
+		D3E57FDE2C367DC20089E2F7 /* HeaderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderRow.swift; sourceTree = "<group>"; };
+		D3E57FDF2C367DC20089E2F7 /* RequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
+		D3E57FE12C367DC20089E2F7 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
+		D3E57FE22C367DC20089E2F7 /* AutomationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationView.swift; sourceTree = "<group>"; };
+		D3E57FE32C367DC20089E2F7 /* ConnectionHeaderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionHeaderRow.swift; sourceTree = "<group>"; };
+		D3E57FE42C367DC20089E2F7 /* HeaderRowData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderRowData.swift; sourceTree = "<group>"; };
+		D3E57FE52C367DC20089E2F7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D3E57FE62C367DC20089E2F7 /* MenuRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRow.swift; sourceTree = "<group>"; };
+		D3E57FE72C367DC20089E2F7 /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
+		D3E57FE82C367DC20089E2F7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D3E57FE92C367DC20089E2F7 /* SetupConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupConnectionView.swift; sourceTree = "<group>"; };
+		D3E57FEB2C367DC20089E2F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D3E57FEC2C367DC20089E2F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D3E57FED2C367DC20089E2F7 /* Fetchr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fetchr.entitlements; sourceTree = "<group>"; };
+		D3E57FEE2C367DC20089E2F7 /* FetchrApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchrApp.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D351CCF32C2606AB004F44CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D351CD062C2606AC004F44CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D351CD102C2606AC004F44CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3673A912C31140A00EA6A8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3673AA02C31140B00EA6A8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3673AAA2C31140B00EA6A8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D351CCED2C2606AB004F44CF = {
+			isa = PBXGroup;
+			children = (
+				D3E57FEF2C367DC20089E2F7 /* Fetchr */,
+				D351CD0C2C2606AC004F44CF /* FetchrTests */,
+				D351CD162C2606AC004F44CF /* FetchrUITests */,
+				D3673A952C31140A00EA6A8B /* Fetchr Watch App */,
+				D3673AA62C31140B00EA6A8B /* Fetchr Watch AppTests */,
+				D3673AB02C31140B00EA6A8B /* Fetchr Watch AppUITests */,
+				D351CCF72C2606AB004F44CF /* Products */,
+				D3673ADA2C34D63500EA6A8B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D351CCF72C2606AB004F44CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D351CCF62C2606AB004F44CF /* Fetchr.app */,
+				D351CD092C2606AC004F44CF /* FetchrTests.xctest */,
+				D351CD132C2606AC004F44CF /* FetchrUITests.xctest */,
+				D3673A942C31140A00EA6A8B /* Fetchr Watch App.app */,
+				D3673AA32C31140B00EA6A8B /* Fetchr Watch AppTests.xctest */,
+				D3673AAD2C31140B00EA6A8B /* Fetchr Watch AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D351CD0C2C2606AC004F44CF /* FetchrTests */ = {
+			isa = PBXGroup;
+			children = (
+				D351CD0D2C2606AC004F44CF /* FetchrTests.swift */,
+			);
+			path = FetchrTests;
+			sourceTree = "<group>";
+		};
+		D351CD162C2606AC004F44CF /* FetchrUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D351CD172C2606AC004F44CF /* FetchrUITests.swift */,
+				D351CD192C2606AC004F44CF /* FetchrUITestsLaunchTests.swift */,
+			);
+			path = FetchrUITests;
+			sourceTree = "<group>";
+		};
+		D3673A952C31140A00EA6A8B /* Fetchr Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				D3673A962C31140A00EA6A8B /* FetchrWatchApp.swift */,
+				D3673A982C31140A00EA6A8B /* ContentView.swift */,
+				D3673A9A2C31140B00EA6A8B /* Assets.xcassets */,
+				D3673A9C2C31140B00EA6A8B /* Preview Content */,
+			);
+			path = "Fetchr Watch App";
+			sourceTree = "<group>";
+		};
+		D3673A9C2C31140B00EA6A8B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D3673A9D2C31140B00EA6A8B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D3673AA62C31140B00EA6A8B /* Fetchr Watch AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				D3673AA72C31140B00EA6A8B /* Fetchr_Watch_AppTests.swift */,
+			);
+			path = "Fetchr Watch AppTests";
+			sourceTree = "<group>";
+		};
+		D3673AB02C31140B00EA6A8B /* Fetchr Watch AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D3673AB12C31140B00EA6A8B /* Fetchr_Watch_AppUITests.swift */,
+				D3673AB32C31140B00EA6A8B /* Fetchr_Watch_AppUITestsLaunchTests.swift */,
+			);
+			path = "Fetchr Watch AppUITests";
+			sourceTree = "<group>";
+		};
+		D3673ADA2C34D63500EA6A8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3E57FD52C367DC20089E2F7 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				D3E57FD42C367DC20089E2F7 /* RequesterErrors.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		D3E57FD72C367DC20089E2F7 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D3E57FD62C367DC20089E2F7 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D3E57FDB2C367DC20089E2F7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D3E57FD82C367DC20089E2F7 /* DateUtil.swift */,
+				D3E57FD92C367DC20089E2F7 /* Requester.swift */,
+				D3E57FDA2C367DC20089E2F7 /* RequesterMethod.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D3E57FE02C367DC20089E2F7 /* SwiftDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				D3E57FDC2C367DC20089E2F7 /* BodyData.swift */,
+				D3E57FDD2C367DC20089E2F7 /* HeaderData.swift */,
+				D3E57FDE2C367DC20089E2F7 /* HeaderRow.swift */,
+				D3E57FDF2C367DC20089E2F7 /* RequestData.swift */,
+			);
+			path = SwiftDataModels;
+			sourceTree = "<group>";
+		};
+		D3E57FEA2C367DC20089E2F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D3E57FE12C367DC20089E2F7 /* AddButton.swift */,
+				D3E57FE22C367DC20089E2F7 /* AutomationView.swift */,
+				D3E57FE32C367DC20089E2F7 /* ConnectionHeaderRow.swift */,
+				D3E57FE42C367DC20089E2F7 /* HeaderRowData.swift */,
+				D3E57FE52C367DC20089E2F7 /* HomeView.swift */,
+				D3E57FE62C367DC20089E2F7 /* MenuRow.swift */,
+				D3E57FE72C367DC20089E2F7 /* NavView.swift */,
+				D3E57FE82C367DC20089E2F7 /* SettingsView.swift */,
+				D3E57FE92C367DC20089E2F7 /* SetupConnectionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D3E57FEF2C367DC20089E2F7 /* Fetchr */ = {
+			isa = PBXGroup;
+			children = (
+				D3E57FD52C367DC20089E2F7 /* Errors */,
+				D3E57FD72C367DC20089E2F7 /* Preview Content */,
+				D3E57FDB2C367DC20089E2F7 /* Resources */,
+				D3E57FE02C367DC20089E2F7 /* SwiftDataModels */,
+				D3E57FEA2C367DC20089E2F7 /* Views */,
+				D3E57FEB2C367DC20089E2F7 /* Assets.xcassets */,
+				D3E57FEC2C367DC20089E2F7 /* ContentView.swift */,
+				D3E57FED2C367DC20089E2F7 /* Fetchr.entitlements */,
+				D3E57FEE2C367DC20089E2F7 /* FetchrApp.swift */,
+			);
+			path = Fetchr;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D351CCF52C2606AB004F44CF /* Fetchr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D351CD1D2C2606AC004F44CF /* Build configuration list for PBXNativeTarget "Fetchr" */;
+			buildPhases = (
+				D351CCF22C2606AB004F44CF /* Sources */,
+				D351CCF32C2606AB004F44CF /* Frameworks */,
+				D351CCF42C2606AB004F44CF /* Resources */,
+				D3673ABB2C31140B00EA6A8B /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3673ADC2C34D63700EA6A8B /* PBXTargetDependency */,
+			);
+			name = Fetchr;
+			productName = "REST Requester";
+			productReference = D351CCF62C2606AB004F44CF /* Fetchr.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D351CD082C2606AC004F44CF /* FetchrTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D351CD202C2606AC004F44CF /* Build configuration list for PBXNativeTarget "FetchrTests" */;
+			buildPhases = (
+				D351CD052C2606AC004F44CF /* Sources */,
+				D351CD062C2606AC004F44CF /* Frameworks */,
+				D351CD072C2606AC004F44CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D351CD0B2C2606AC004F44CF /* PBXTargetDependency */,
+			);
+			name = FetchrTests;
+			productName = "REST RequesterTests";
+			productReference = D351CD092C2606AC004F44CF /* FetchrTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D351CD122C2606AC004F44CF /* FetchrUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D351CD232C2606AC004F44CF /* Build configuration list for PBXNativeTarget "FetchrUITests" */;
+			buildPhases = (
+				D351CD0F2C2606AC004F44CF /* Sources */,
+				D351CD102C2606AC004F44CF /* Frameworks */,
+				D351CD112C2606AC004F44CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D351CD152C2606AC004F44CF /* PBXTargetDependency */,
+			);
+			name = FetchrUITests;
+			productName = "REST RequesterUITests";
+			productReference = D351CD132C2606AC004F44CF /* FetchrUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		D3673A932C31140A00EA6A8B /* Fetchr Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3673AB82C31140B00EA6A8B /* Build configuration list for PBXNativeTarget "Fetchr Watch App" */;
+			buildPhases = (
+				D3673A902C31140A00EA6A8B /* Sources */,
+				D3673A912C31140A00EA6A8B /* Frameworks */,
+				D3673A922C31140A00EA6A8B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Fetchr Watch App";
+			productName = "Athna Watch App";
+			productReference = D3673A942C31140A00EA6A8B /* Fetchr Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D3673AA22C31140B00EA6A8B /* Fetchr Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3673ABC2C31140B00EA6A8B /* Build configuration list for PBXNativeTarget "Fetchr Watch AppTests" */;
+			buildPhases = (
+				D3673A9F2C31140B00EA6A8B /* Sources */,
+				D3673AA02C31140B00EA6A8B /* Frameworks */,
+				D3673AA12C31140B00EA6A8B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3673AA52C31140B00EA6A8B /* PBXTargetDependency */,
+			);
+			name = "Fetchr Watch AppTests";
+			productName = "Athna Watch AppTests";
+			productReference = D3673AA32C31140B00EA6A8B /* Fetchr Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D3673AAC2C31140B00EA6A8B /* Fetchr Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3673ABF2C31140B00EA6A8B /* Build configuration list for PBXNativeTarget "Fetchr Watch AppUITests" */;
+			buildPhases = (
+				D3673AA92C31140B00EA6A8B /* Sources */,
+				D3673AAA2C31140B00EA6A8B /* Frameworks */,
+				D3673AAB2C31140B00EA6A8B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3673AAF2C31140B00EA6A8B /* PBXTargetDependency */,
+			);
+			name = "Fetchr Watch AppUITests";
+			productName = "Athna Watch AppUITests";
+			productReference = D3673AAD2C31140B00EA6A8B /* Fetchr Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D351CCEE2C2606AB004F44CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					D351CCF52C2606AB004F44CF = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					D351CD082C2606AC004F44CF = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = D351CCF52C2606AB004F44CF;
+					};
+					D351CD122C2606AC004F44CF = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = D351CCF52C2606AB004F44CF;
+					};
+					D3673A932C31140A00EA6A8B = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					D3673AA22C31140B00EA6A8B = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = D3673A932C31140A00EA6A8B;
+					};
+					D3673AAC2C31140B00EA6A8B = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = D3673A932C31140A00EA6A8B;
+					};
+				};
+			};
+			buildConfigurationList = D351CCF12C2606AB004F44CF /* Build configuration list for PBXProject "Fetchr" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D351CCED2C2606AB004F44CF;
+			productRefGroup = D351CCF72C2606AB004F44CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D351CCF52C2606AB004F44CF /* Fetchr */,
+				D351CD082C2606AC004F44CF /* FetchrTests */,
+				D351CD122C2606AC004F44CF /* FetchrUITests */,
+				D3673A932C31140A00EA6A8B /* Fetchr Watch App */,
+				D3673AA22C31140B00EA6A8B /* Fetchr Watch AppTests */,
+				D3673AAC2C31140B00EA6A8B /* Fetchr Watch AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D351CCF42C2606AB004F44CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3E580032C367DC20089E2F7 /* Assets.xcassets in Resources */,
+				D3E580042C367DC20089E2F7 /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D351CD072C2606AC004F44CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D351CD112C2606AC004F44CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3673A922C31140A00EA6A8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3673A9E2C31140B00EA6A8B /* Preview Assets.xcassets in Resources */,
+				D3673A9B2C31140B00EA6A8B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3673AA12C31140B00EA6A8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3673AAB2C31140B00EA6A8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D351CCF22C2606AB004F44CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3E57FF02C367DC20089E2F7 /* RequesterMethod.swift in Sources */,
+				D3E57FF12C367DC20089E2F7 /* SetupConnectionView.swift in Sources */,
+				D3E57FF22C367DC20089E2F7 /* Requester.swift in Sources */,
+				D3E57FF32C367DC20089E2F7 /* MenuRow.swift in Sources */,
+				D3E57FF42C367DC20089E2F7 /* FetchrApp.swift in Sources */,
+				D3E57FF52C367DC20089E2F7 /* DateUtil.swift in Sources */,
+				D3E57FF62C367DC20089E2F7 /* HeaderData.swift in Sources */,
+				D3E57FF72C367DC20089E2F7 /* ConnectionHeaderRow.swift in Sources */,
+				D3E57FF82C367DC20089E2F7 /* NavView.swift in Sources */,
+				D3E57FF92C367DC20089E2F7 /* BodyData.swift in Sources */,
+				D3E57FFA2C367DC20089E2F7 /* AddButton.swift in Sources */,
+				D3E57FFB2C367DC20089E2F7 /* ContentView.swift in Sources */,
+				D3E57FFC2C367DC20089E2F7 /* SettingsView.swift in Sources */,
+				D3E57FFD2C367DC20089E2F7 /* AutomationView.swift in Sources */,
+				D3E57FFE2C367DC20089E2F7 /* HeaderRowData.swift in Sources */,
+				D3E57FFF2C367DC20089E2F7 /* RequesterErrors.swift in Sources */,
+				D3E580002C367DC20089E2F7 /* HeaderRow.swift in Sources */,
+				D3E580012C367DC20089E2F7 /* RequestData.swift in Sources */,
+				D3E580022C367DC20089E2F7 /* HomeView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D351CD052C2606AC004F44CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D351CD0E2C2606AC004F44CF /* FetchrTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D351CD0F2C2606AC004F44CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D351CD182C2606AC004F44CF /* FetchrUITests.swift in Sources */,
+				D351CD1A2C2606AC004F44CF /* FetchrUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3673A902C31140A00EA6A8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3673A992C31140A00EA6A8B /* ContentView.swift in Sources */,
+				D3673A972C31140A00EA6A8B /* FetchrWatchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3673A9F2C31140B00EA6A8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3673AA82C31140B00EA6A8B /* Fetchr_Watch_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3673AA92C31140B00EA6A8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3673AB22C31140B00EA6A8B /* Fetchr_Watch_AppUITests.swift in Sources */,
+				D3673AB42C31140B00EA6A8B /* Fetchr_Watch_AppUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D351CD0B2C2606AC004F44CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D351CCF52C2606AB004F44CF /* Fetchr */;
+			targetProxy = D351CD0A2C2606AC004F44CF /* PBXContainerItemProxy */;
+		};
+		D351CD152C2606AC004F44CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D351CCF52C2606AB004F44CF /* Fetchr */;
+			targetProxy = D351CD142C2606AC004F44CF /* PBXContainerItemProxy */;
+		};
+		D3673AA52C31140B00EA6A8B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3673A932C31140A00EA6A8B /* Fetchr Watch App */;
+			targetProxy = D3673AA42C31140B00EA6A8B /* PBXContainerItemProxy */;
+		};
+		D3673AAF2C31140B00EA6A8B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3673A932C31140A00EA6A8B /* Fetchr Watch App */;
+			targetProxy = D3673AAE2C31140B00EA6A8B /* PBXContainerItemProxy */;
+		};
+		D3673ADC2C34D63700EA6A8B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3673A932C31140A00EA6A8B /* Fetchr Watch App */;
+			targetProxy = D3673ADB2C34D63700EA6A8B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D351CD1B2C2606AC004F44CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D351CD1C2C2606AC004F44CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		D351CD1E2C2606AC004F44CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Fetchr/Fetchr.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 20240702;
+				DEVELOPMENT_ASSET_PATHS = "\"Fetchr/Preview Content\"";
+				DEVELOPMENT_TEAM = WZ7Q6J2VP9;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riigess.Fetchr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				TVOS_DEPLOYMENT_TARGET = 17.0;
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		D351CD1F2C2606AC004F44CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Fetchr/Fetchr.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 20240702;
+				DEVELOPMENT_ASSET_PATHS = "\"Fetchr/Preview Content\"";
+				DEVELOPMENT_TEAM = WZ7Q6J2VP9;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riigess.Fetchr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				TVOS_DEPLOYMENT_TARGET = 17.0;
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		D351CD212C2606AC004F44CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WZ7Q6J2VP9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riigess.REST-RequesterTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/REST Requester.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/REST Requester";
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		D351CD222C2606AC004F44CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WZ7Q6J2VP9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riigess.REST-RequesterTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/REST Requester.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/REST Requester";
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		D351CD242C2606AC004F44CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WZ7Q6J2VP9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riigess.FetchrUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = Fetchr;
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		D351CD252C2606AC004F44CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WZ7Q6J2VP9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riigess.FetchrUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = Fetchr;
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		D3673AB92C31140B00EA6A8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Fetchr Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = WZ7Q6J2VP9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Fetchr;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.riigess.Fetchr;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riigess.Fetchr.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		D3673ABA2C31140B00EA6A8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Fetchr Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = WZ7Q6J2VP9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Fetchr;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.riigess.Fetchr;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riigess.Fetchr.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		D3673ABD2C31140B00EA6A8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WZ7Q6J2VP9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riigess.Fetchr-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fetchr Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fetchr Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		D3673ABE2C31140B00EA6A8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WZ7Q6J2VP9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riigess.Fetchr-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fetchr Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fetchr Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		D3673AC02C31140B00EA6A8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WZ7Q6J2VP9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riigess.Fetchr-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Fetchr Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		D3673AC12C31140B00EA6A8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WZ7Q6J2VP9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riigess.Fetchr-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Fetchr Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D351CCF12C2606AB004F44CF /* Build configuration list for PBXProject "Fetchr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D351CD1B2C2606AC004F44CF /* Debug */,
+				D351CD1C2C2606AC004F44CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D351CD1D2C2606AC004F44CF /* Build configuration list for PBXNativeTarget "Fetchr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D351CD1E2C2606AC004F44CF /* Debug */,
+				D351CD1F2C2606AC004F44CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D351CD202C2606AC004F44CF /* Build configuration list for PBXNativeTarget "FetchrTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D351CD212C2606AC004F44CF /* Debug */,
+				D351CD222C2606AC004F44CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D351CD232C2606AC004F44CF /* Build configuration list for PBXNativeTarget "FetchrUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D351CD242C2606AC004F44CF /* Debug */,
+				D351CD252C2606AC004F44CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3673AB82C31140B00EA6A8B /* Build configuration list for PBXNativeTarget "Fetchr Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3673AB92C31140B00EA6A8B /* Debug */,
+				D3673ABA2C31140B00EA6A8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3673ABC2C31140B00EA6A8B /* Build configuration list for PBXNativeTarget "Fetchr Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3673ABD2C31140B00EA6A8B /* Debug */,
+				D3673ABE2C31140B00EA6A8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3673ABF2C31140B00EA6A8B /* Build configuration list for PBXNativeTarget "Fetchr Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3673AC02C31140B00EA6A8B /* Debug */,
+				D3673AC12C31140B00EA6A8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D351CCEE2C2606AB004F44CF /* Project object */;
+}
