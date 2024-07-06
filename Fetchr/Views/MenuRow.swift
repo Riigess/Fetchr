@@ -15,7 +15,6 @@ struct MenuRow: View {
     
     let rowWidth:CGFloat
     let rowHeight:CGFloat
-//    let isDarkMode:Bool = UIScreen.main.traitCollection.userInterfaceStyle == .dark
     
     init(requestType:RequesterMethod = .GET, name:String = "", hasData:Bool = false, url:String = "", rowWidth:CGFloat = UIScreen.main.bounds.width, rowHeight:CGFloat = UIScreen.main.bounds.height) {
         self.requestType = requestType
@@ -60,14 +59,13 @@ struct MenuRow: View {
                     Text(requestType.rawValue)
                         .bold()
                         .font(.system(size: 18))
-//                        .offset(x: 10)
                         .foregroundColor(requestTypeButtonColor(requestType: requestType))
                         .frame(width: 70, alignment: .trailing)
                     HStack {
                         Spacer()
                         Image(systemName: hasData ? "square.and.arrow.down" : "arrow.down.circle")
                             .foregroundColor(hasData ? .green : .gray)
-                            .offset(x: -10)
+                            .padding(.trailing, 10)
                     }
                 }
                 Spacer()
@@ -75,8 +73,7 @@ struct MenuRow: View {
             Rectangle()
                 .frame(width: rowWidth - 40, height: 1)
                 .foregroundColor(Color(cgColor: CGColor(gray: 120.0/255.0, alpha: 0.3)))
-            Text("") //TODO: switch this with something more reasonable (ex. padding, border, etc)
-                .frame(height: 5)
+                .padding(.bottom, 5)
         }
     }
 }

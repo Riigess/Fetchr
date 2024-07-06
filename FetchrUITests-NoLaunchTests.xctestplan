@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "1458A1F6-D982-4D11-B71C-2491A09868B1",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "skippedTests" : [
+        "REST_RequesterUITestsLaunchTests",
+        "REST_RequesterUITestsLaunchTests\/testLaunch()"
+      ],
+      "target" : {
+        "containerPath" : "container:Fetchr.xcodeproj",
+        "identifier" : "D351CD122C2606AC004F44CF",
+        "name" : "FetchrUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
