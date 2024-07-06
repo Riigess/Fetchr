@@ -44,15 +44,9 @@ struct NavView: View {
         let tabBarColoredAppearance = UITabBarAppearance()
         tabBarColoredAppearance.configureWithOpaqueBackground()
         tabBarColoredAppearance.backgroundColor = UIColor(cgColor: tabNavColor.cgColor!)
-//        tabBarColoredAppearance.selectionIndicatorTintColor = .green
         
         UITabBar.appearance().scrollEdgeAppearance = tabBarColoredAppearance //What happens when there is no content behind it
         UITabBar.appearance().standardAppearance = tabBarColoredAppearance //What happens when there is content behind it
-//        UITabBar.appearance().unselectedItemTintColor = UIColor(red: 255.0 / 255.0, green: 255.0 / 255.0, blue: 255.0 / 255.0, alpha: 0.8)
-//        UITabBar.appearance().unselectedItemTintColor = .purple
-//        UITabBar.appearance().selectedItem?.standardAppearance?.selectionIndicatorTintColor = .white
-//        UITabBar.appearance().barTintColor = .green
-//        UITabBar.appearance().tintColor = .green
     }
     
     var body: some View {

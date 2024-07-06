@@ -9,32 +9,35 @@ import SwiftUI
 import SwiftData
 
 struct ConnectionHeaderRow: View {
-    var id:UUID
-//    @Query(filter: #Predicate { $0.id == self.id }) var row: [RequestData]
-    @Environment(\.modelContext) private var modelContext
-    private var headerRow:HeaderRow
+    var headerRow:HeaderRow
     
-    init(id:UUID) {
-        self.id = id
-        self.headerRow = Query(filter: #Predicate { id == $0.id }).wrappedValue.first!
+    let deviceWidth:CGFloat
+    let deviceHeight:CGFloat
+    
+    @State private var headerKey:String
+    @State private var headerValue:String
+    
+    init(headerRow:HeaderRow, deviceWidth:CGFloat, deviceHeight:CGFloat) {
+        self.headerRow = headerRow
+        self.deviceWidth = deviceWidth
+        self.deviceHeight = deviceHeight
+        
+        self.headerKey = headerRow.key
+        self.headerValue = headerRow.value
     }
     
     var body: some View {
         HStack {
-//            TextField("Key", text: headerRow.$key)
-            Text("Key: \(headerRow.key)")
-                .padding(.horizontal)
+            TextField("Key", text: $headerKey)
+                .frame(width: (deviceWidth / 2) - 30)
             #if os(iOS)
                 .border(.bar, width: 2)
             #endif
-//            TextField("Value", text: headerRow.$value)
-            Text("Value: \(headerRow.value)")
-                .padding(.horizontal)
+            TextField("Value", text: $headerValue)
+                .frame(width: (deviceWidth / 2) - 30)
             #if os(iOS)
                 .border(.bar, width: 2)
             #endif
-            Text("")
-                .frame(width: 1)
         }
     }
 }
@@ -44,7 +47,10 @@ struct ConnectionHeaderRow_Previews: PreviewProvider {
     @State static var value:String = ""
     static var uuid:UUID = UUID()
     
+    static let deviceWidth:CGFloat = UIScreen.main.bounds.width
+    static let deviceHeight:CGFloat = UIScreen.main.bounds.height
+    
     static var previews: some View {
-        ConnectionHeaderRow(id: uuid)
+        ConnectionHeaderRow(headerRow: HeaderRow(key: "", value: ""), deviceWidth: deviceWidth, deviceHeight: deviceHeight)
     }
 }

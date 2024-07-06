@@ -32,13 +32,24 @@ struct HomeView: View {
                     Text("").frame(height: 5)
                     ForEach(searchResults, id: \.name) { row in
                         NavigationLink {
-                            SetupConnectionView(requestData: row)
+                            SetupConnectionView(requestData: row,
+                                                deviceWidth: self.deviceWidth,
+                                                deviceHeight: self.deviceHeight)
+                                .modelContext(modelContext)
                         } label: {
                             #if os(tvOS)
-                                MenuRow(requestType: row.method, name: row.name, hasData: false, url: row.url, rowWidth: 1600)
+                                MenuRow(requestType: row.method,
+                                        name: row.name,
+                                        hasData: false,
+                                        url: row.url,
+                                        rowWidth: 1600)
                                     .frame(width: 1600)
                             #elseif os(iOS)
-                                MenuRow(requestType: row.method, name: row.name, hasData: false, url: row.url, rowWidth: deviceWidth)
+                                MenuRow(requestType: row.method,
+                                        name: row.name,
+                                        hasData: false,
+                                        url: row.url,
+                                        rowWidth: deviceWidth)
                             #endif
                         }
                     }.navigationTitle(navTitle)
@@ -54,7 +65,7 @@ struct HomeView: View {
             .task {
                 print("SearchResults: \(searchResults.description)")
             }
-            //Do not leave the Add button in the bottom-right of the screen on tvOS/macOS/xrOS
+            //Do not leave the Add button in the bottom-right of the screen on tvOS/macOS/visionOS
             #if os(iOS)
                 Button {
                     showingDetail = true
@@ -69,13 +80,12 @@ struct HomeView: View {
                         y: (deviceHeight / 2) - 160)
                 //View-ception
                 .sheet(isPresented: $showingDetail) {
-                    let dateUtil = DateUtil()
-                    let timeZoneOffsetDate = dateUtil.convertFromUTCToTimeZone()
                     ViewThatFits {
                         NavigationView {
-//                            SetupConnectionView()
-//                                .navigationTitle("New Request")
-                            Text("Sample text, TODO: Setup new SetupConnView()")
+                            SetupConnectionView(requestData: RequestData(url: "", method: .GET, name: ""),
+                                                deviceWidth: self.deviceWidth,
+                                                deviceHeight: self.deviceHeight)
+                                .navigationTitle("New Request")
                         }
                     }
                 }

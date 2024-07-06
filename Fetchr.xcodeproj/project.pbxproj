@@ -132,6 +132,7 @@
 		D3E57FEC2C367DC20089E2F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D3E57FED2C367DC20089E2F7 /* Fetchr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fetchr.entitlements; sourceTree = "<group>"; };
 		D3E57FEE2C367DC20089E2F7 /* FetchrApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchrApp.swift; sourceTree = "<group>"; };
+		D3E580052C38EB7D0089E2F7 /* FetchrUITests-NoLaunchTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "FetchrUITests-NoLaunchTests.xctestplan"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +184,7 @@
 		D351CCED2C2606AB004F44CF = {
 			isa = PBXGroup;
 			children = (
+				D3E580052C38EB7D0089E2F7 /* FetchrUITests-NoLaunchTests.xctestplan */,
 				D3E57FEF2C367DC20089E2F7 /* Fetchr */,
 				D351CD0C2C2606AC004F44CF /* FetchrTests */,
 				D351CD162C2606AC004F44CF /* FetchrUITests */,
@@ -863,14 +865,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.riigess.REST-RequesterTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.riigess.FetchrTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/REST Requester.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/REST Requester";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fetchr.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fetchr";
 				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
@@ -886,14 +888,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.riigess.REST-RequesterTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.riigess.FetchrTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/REST Requester.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/REST Requester";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fetchr.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fetchr";
 				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
