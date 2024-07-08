@@ -13,16 +13,36 @@ struct SetupConnectionView: View {
     private var requestData: RequestData
     
     @State private var urlField:String
+    @State private var headerRows: [HeaderRow]
+    @State private var bodyRows: [BodyData]
+    @State private var bodyString:String = ""
+    @State private var offset = CGSize.zero
+    @State private var bodySendableType:BodySendableType = .string //Set default text
     private let deviceWidth:CGFloat
     private let deviceHeight:CGFloat
     
     init(requestData:RequestData, deviceWidth:CGFloat, deviceHeight:CGFloat) {
         self.requestData = requestData
+        self.urlField = requestData.url
         self.deviceWidth = deviceWidth
         self.deviceHeight = deviceHeight
+        self.headerRows = []
+        self.bodyRows = []
         
-        print(requestData.description)
-        urlField = requestData.url
+        for row in requestData.headerData.headerRows {
+            self.headerRows.append(row)
+        }
+        
+        if let jsonData = requestData.bodyData.jsonBodyString {
+            //TODO: Iterate through JSON data to add it in to the array
+        }
+        if let jsonDesc = requestData.bodyData.strContent {
+            //TODO: Add a String TextBlock for the content
+        }
+        
+        let date = Date()
+        print("------- SetupConnectionView init called at \(date.description) -------")
+//        print(requestData.description)
     }
     
     var body: some View {
@@ -40,46 +60,45 @@ struct SetupConnectionView: View {
                     Text("Header Data")
                         .font(.headline)
                         .padding(.horizontal)
-                    ForEach(requestData.headerData.headerRows, id: \.self) { headerRow in
-                        HStack {
-                            ConnectionHeaderRow(headerRow: headerRow,
-                                                deviceWidth: self.deviceWidth,
-                                                deviceHeight: self.deviceHeight)
+                    ForEach(headerRows, id: \.self) { headerRow in
+                        ZStack {
+                            DeleteButton(headerRows: $headerRows, headerRow: headerRow, onDelete: deleteRow)
+                                .offset(x: (deviceWidth/2) - 60) //Offset from (deviceWidth/2, deviceHeight/2) as origin
+                            HStack {
+                                ConnectionHeaderRow(headerRow: headerRow,
+                                                    deviceWidth: self.deviceWidth,
+                                                    deviceHeight: self.deviceHeight,
+                                                    headerRows: headerRows)
                                 .frame(width: self.deviceWidth)
                                 .onAppear {
                                     print("DeviceWidth passed: \(deviceWidth)")
                                 }
-                                .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local).onEnded { value in
-                                    if value.translation.width < 0 { //On Swipe left
-                                        requestData.headerData.headerRows.removeAll(where: {
-                                            headerRow == $0
-                                        })
-                                    }
-                                })
+                            }
                         }
                     }
+                    .onDelete(perform: { idxSet in
+                        headerRows.remove(atOffsets: idxSet)
+                    })
                     Button {
-                        print("Button pressed")
                         let headerRow = HeaderRow(key: "", value: "")
-                        requestData.headerData.headerRows.append(headerRow)
-                        do {
-                            try modelContext.save()
-                        } catch {
-                            print("Unable to save due to error \(error)")
-                        }
+                        self.headerRows.append(headerRow)
                     } label: {
-                        Text("Add")
-                            .frame(width: 240, height: 30, alignment: .center)
-                            .foregroundStyle(Color.green)
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 35)
+                                .frame(width: deviceWidth - 120, height: 40)
+                                .foregroundStyle(Color(UIColor.systemGray4))
+                            Text("Add")
+                                .frame(width: 240, height: 30, alignment: .center)
+                                .foregroundStyle(Color.blue)
+                        }
                     }
                 }
             }
         }
-        .onAppear {
-            #if DEBUG
-            print("RequestData: \(requestData.description)")
-            #endif
-        }
+    }
+    
+    func deleteRow(at offsets:IndexSet) {
+        self.headerRows.remove(atOffsets: offsets)
     }
 }
 
