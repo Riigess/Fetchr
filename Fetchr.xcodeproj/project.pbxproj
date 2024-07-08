@@ -18,6 +18,9 @@
 		D3673AB22C31140B00EA6A8B /* Fetchr_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3673AB12C31140B00EA6A8B /* Fetchr_Watch_AppUITests.swift */; };
 		D3673AB42C31140B00EA6A8B /* Fetchr_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3673AB32C31140B00EA6A8B /* Fetchr_Watch_AppUITestsLaunchTests.swift */; };
 		D3673AB72C31140B00EA6A8B /* Fetchr Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D3673A942C31140A00EA6A8B /* Fetchr Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D3A4BCD72C3C875E00916173 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4BCD62C3C875C00916173 /* DeleteButton.swift */; };
+		D3A4BCD92C3CAEB300916173 /* BodySendableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4BCD82C3CAEAF00916173 /* BodySendableType.swift */; };
+		D3B0B57D2C3B3701002F988E /* TrapezoidShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0B57C2C3B36FB002F988E /* TrapezoidShape.swift */; };
 		D3E57FF02C367DC20089E2F7 /* RequesterMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FDA2C367DC20089E2F7 /* RequesterMethod.swift */; };
 		D3E57FF12C367DC20089E2F7 /* SetupConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FE92C367DC20089E2F7 /* SetupConnectionView.swift */; };
 		D3E57FF22C367DC20089E2F7 /* Requester.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FD92C367DC20089E2F7 /* Requester.swift */; };
@@ -110,6 +113,10 @@
 		D3673AAD2C31140B00EA6A8B /* Fetchr Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fetchr Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3673AB12C31140B00EA6A8B /* Fetchr_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetchr_Watch_AppUITests.swift; sourceTree = "<group>"; };
 		D3673AB32C31140B00EA6A8B /* Fetchr_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetchr_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D3A4BCD52C3BA65600916173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D3A4BCD62C3C875C00916173 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
+		D3A4BCD82C3CAEAF00916173 /* BodySendableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodySendableType.swift; sourceTree = "<group>"; };
+		D3B0B57C2C3B36FB002F988E /* TrapezoidShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrapezoidShape.swift; sourceTree = "<group>"; };
 		D3E57FD42C367DC20089E2F7 /* RequesterErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequesterErrors.swift; sourceTree = "<group>"; };
 		D3E57FD62C367DC20089E2F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D3E57FD82C367DC20089E2F7 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
@@ -288,6 +295,7 @@
 		D3E57FDB2C367DC20089E2F7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D3A4BCD82C3CAEAF00916173 /* BodySendableType.swift */,
 				D3E57FD82C367DC20089E2F7 /* DateUtil.swift */,
 				D3E57FD92C367DC20089E2F7 /* Requester.swift */,
 				D3E57FDA2C367DC20089E2F7 /* RequesterMethod.swift */,
@@ -309,6 +317,8 @@
 		D3E57FEA2C367DC20089E2F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D3A4BCD62C3C875C00916173 /* DeleteButton.swift */,
+				D3B0B57C2C3B36FB002F988E /* TrapezoidShape.swift */,
 				D3E57FE12C367DC20089E2F7 /* AddButton.swift */,
 				D3E57FE22C367DC20089E2F7 /* AutomationView.swift */,
 				D3E57FE32C367DC20089E2F7 /* ConnectionHeaderRow.swift */,
@@ -325,6 +335,7 @@
 		D3E57FEF2C367DC20089E2F7 /* Fetchr */ = {
 			isa = PBXGroup;
 			children = (
+				D3A4BCD52C3BA65600916173 /* Info.plist */,
 				D3E57FD52C367DC20089E2F7 /* Errors */,
 				D3E57FD72C367DC20089E2F7 /* Preview Content */,
 				D3E57FDB2C367DC20089E2F7 /* Resources */,
@@ -561,6 +572,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3E57FF02C367DC20089E2F7 /* RequesterMethod.swift in Sources */,
+				D3A4BCD92C3CAEB300916173 /* BodySendableType.swift in Sources */,
 				D3E57FF12C367DC20089E2F7 /* SetupConnectionView.swift in Sources */,
 				D3E57FF22C367DC20089E2F7 /* Requester.swift in Sources */,
 				D3E57FF32C367DC20089E2F7 /* MenuRow.swift in Sources */,
@@ -570,6 +582,8 @@
 				D3E57FF72C367DC20089E2F7 /* ConnectionHeaderRow.swift in Sources */,
 				D3E57FF82C367DC20089E2F7 /* NavView.swift in Sources */,
 				D3E57FF92C367DC20089E2F7 /* BodyData.swift in Sources */,
+				D3B0B57D2C3B3701002F988E /* TrapezoidShape.swift in Sources */,
+				D3A4BCD72C3C875E00916173 /* DeleteButton.swift in Sources */,
 				D3E57FFA2C367DC20089E2F7 /* AddButton.swift in Sources */,
 				D3E57FFB2C367DC20089E2F7 /* ContentView.swift in Sources */,
 				D3E57FFC2C367DC20089E2F7 /* SettingsView.swift in Sources */,
@@ -777,12 +791,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Fetchr/Fetchr.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20240702;
+				CURRENT_PROJECT_VERSION = 2024.07;
 				DEVELOPMENT_ASSET_PATHS = "\"Fetchr/Preview Content\"";
 				DEVELOPMENT_TEAM = WZ7Q6J2VP9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Fetchr/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -819,12 +834,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Fetchr/Fetchr.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20240702;
+				CURRENT_PROJECT_VERSION = 2024.07;
 				DEVELOPMENT_ASSET_PATHS = "\"Fetchr/Preview Content\"";
 				DEVELOPMENT_TEAM = WZ7Q6J2VP9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Fetchr/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;

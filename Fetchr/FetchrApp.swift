@@ -61,5 +61,14 @@ struct FetchrApp: App {
             ContentView()
         }
         .modelContainer(sharedModelContainer)
+    #if os(macOS)
+        MenuBarExtra("Inspect", systemImage: "eyedropper") {
+            VStack {
+                Button("Action One") {
+                    print("Action One clicked on Mac!")
+                }
+            }
+        }
+    #endif
     }
 }
