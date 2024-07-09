@@ -14,12 +14,13 @@ struct ConnectionHeaderRow: View {
     let deviceWidth:CGFloat
     let deviceHeight:CGFloat
     let isHeaderRow:Bool
-//    let parentView:any View
     
     @State private var headerKey:String
     @State private var headerValue:String
     @State private var offset:CGFloat
     @State var headerRows:[HeaderRow]
+    @State var headerTab:Color = .orange
+    @FocusState private var valueHeaderIsFocused:Bool
     
     init(headerRow:HeaderRow, deviceWidth:CGFloat, deviceHeight:CGFloat, isHeaderRow:Bool = true, headerRows:[HeaderRow]) {
         self.headerRow = headerRow
@@ -35,49 +36,62 @@ struct ConnectionHeaderRow: View {
     
     var body: some View {
         ZStack {
-            ZStack {
-                HStack {
-                    RoundedTrapezoidShape(slope: 5)
-                        .frame(width: 60, height: 100)
-                        .foregroundStyle(isHeaderRow ? Color.orange : Color.blue)
-                        .rotationEffect(Angle(degrees: 180))
-                        .offset(x: 20)
-                    RoundedTrapezoidShape(slope: 5)
-                        .frame(width: deviceWidth - 50, height: 100)
-                        .offset(x: -20)
-                }
-                Text(isHeaderRow ? "Header" : "Body")
-                    .rotationEffect(Angle(degrees: 75))
-                    .foregroundStyle(Color(UIColor.systemGray6))
-                    .offset(x: 40 - (deviceWidth / 2))
-                    .font(.title3)
-            }
-            VStack {
-                TextField("Key", text: $headerKey)
-                    .frame(width: deviceWidth - 90, height: 32)
-                    .tag(0)
-                    .padding(.leading, 10)
-                    .background {
-                        RoundedRectangle(cornerRadius: 32.0 / 3.0)
-                            .foregroundStyle(Color(UIColor.systemGray4))
-                    }
-                HStack {
-                    Text("")
-                        .frame(width: 12)
-                    TextField("Value", text: $headerValue)
-                        .frame(width: deviceWidth - 110, height: 32)
-                        .tag(1)
-                        .padding(.leading, 10)
-                        .background {
-                            RoundedRectangle(cornerRadius: 32.0 / 3.0)
-                                .foregroundStyle(Color(UIColor.systemGray4))
+            HStack(spacing: 0) {
+                ZStack {
+                    PartialPillShape(roundedCornerRadius: 20)
+                        .frame(width: 50)
+                        .foregroundStyle(isHeaderRow ? headerTab : Color.blue)
+                        .onAppear {
+                            if self.headerKey.isEmpty && !self.headerValue.isEmpty {
+                                headerTab = .red
+                            }
                         }
+                    Text(isHeaderRow ? "Header" : "Body")
+                        .rotationEffect(Angle(degrees: 90))
+                        .foregroundStyle(Color(UIColor.systemGray6))
+                        .font(.title3)
+                        .padding(.top, 0)
                 }
-                .padding(.top, 2)
+                .offset(x: 10)
+                ZStack {
+                    PartialPillShape(roundedCornerRadius: 20)
+                        .rotationEffect(Angle(degrees: 180))
+                    VStack(spacing: 12) {
+                        TextField("Key", text: $headerKey)
+                            .padding(.leading, 10)
+                            .background {
+                                RoundedRectangle(cornerRadius: 32.0 / 3.0)
+                                    .foregroundStyle(Color(UIColor.systemGray4))
+                            }
+                            .submitLabel(.next)
+                            .onSubmit {
+                                valueHeaderIsFocused = true
+                            }
+                        TextField("Value", text: $headerValue)
+                            .padding(.leading, 10)
+                            .focused($valueHeaderIsFocused)
+                            .background {
+                                RoundedRectangle(cornerRadius: 32.0 / 3.0)
+                                    .foregroundStyle(Color(UIColor.systemGray4))
+                            }
+                            .submitLabel(SubmitLabel.done)
+                            .onSubmit {
+                                valueHeaderIsFocused = false
+                                if !headerKey.isEmpty {
+                                    headerRow.key = headerKey
+                                    headerRow.value = headerValue
+                                } else if !headerValue.isEmpty {
+                                    headerTab = Color.red
+                                }
+                            }
+                    }
+                    .frame(width: deviceWidth - 100)
+                }
             }
-            .frame(alignment: .trailing)
-            .offset(x: 16)
+            .frame(height: 80)
+            .offset(x: -10)
         }
+        .frame(height: 80)
         .offset(x: offset)
         .gesture(DragGesture(minimumDistance: 2, coordinateSpace: .local).onChanged { value in
             if value.translation.width > -100 && value.translation.width < 0 {
@@ -113,6 +127,43 @@ struct ConnectionHeaderRow: View {
     }
 }
 
+struct RowDesign:View {
+    let width:CGFloat
+    let height:CGFloat
+    
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 20)
+                .frame(width: 80, height: height)
+                .foregroundStyle(Color.orange)
+        }
+    }
+}
+
+struct PartialPillShape:Shape {
+    let roundedCornerRadius:CGFloat
+    
+    func path(in rect:CGRect) -> Path {
+        var path = Path()
+        path.move(to: CGPoint(x: rect.maxX, y: rect.minY)) //Start at the top-right corner
+        path.addLine(to: CGPoint(x: rect.minX + (roundedCornerRadius), y: rect.minY)) //Move to point just before the curve
+        path.addArc(center: CGPoint(x: rect.minX + roundedCornerRadius, y: rect.minY + roundedCornerRadius),
+                    radius: roundedCornerRadius,
+                    startAngle: Angle(degrees: 90),
+                    endAngle: Angle(degrees: 180),
+                    clockwise: true)
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY - (roundedCornerRadius)))
+        path.addArc(center: CGPoint(x: rect.minX + (roundedCornerRadius), y: rect.maxY - (roundedCornerRadius)),
+                    radius: roundedCornerRadius,
+                    startAngle: Angle(degrees: 0),
+                    endAngle: Angle(degrees: 90),
+                    clockwise: true)
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+        path.closeSubpath()
+        return path
+    }
+}
+
 enum ConnectionHeaderRowPreviewDevices: String, CaseIterable {
     case iPhone15ProMax = "iPhone 15 Pro Max"
     case Coeus = "Coeus" //My Personal Device
@@ -123,6 +174,7 @@ enum ConnectionHeaderRowPreviewDevices: String, CaseIterable {
         return ConnectionHeaderRowPreviewDevices.allCases.map { $0.rawValue }
     }
 }
+
 struct ConnectionHeaderRow_Previews: PreviewProvider {
     @State static var key:String = ""
     @State static var value:String = ""
@@ -139,6 +191,7 @@ struct ConnectionHeaderRow_Previews: PreviewProvider {
         HeaderRow(key: "X-Riot-Api-Token", value: "rgapi_ritodev-auto_color_scheme"),
         HeaderRow(key: "Testing Header Key C", value: "blah blah blah"),
         HeaderRow(key: "Testing Header Key D", value: "nah nah nah"),
+        HeaderRow(key: "", value: "TEST TEST SCREM")
     ]
     
     static var previews: some View {
@@ -150,6 +203,26 @@ struct ConnectionHeaderRow_Previews: PreviewProvider {
                                         deviceHeight: deviceHeight,
                                         headerRows: headerRows)
                 }
+                HStack(spacing: 0) {
+                    ZStack {
+                        PartialPillShape(roundedCornerRadius: 16)
+                            .frame(width: 40)
+                            .foregroundStyle(Color.orange)
+                        Text("Header")
+                            .rotationEffect(Angle(degrees: 90))
+                            .foregroundStyle(Color(UIColor.systemGray6))
+                    }
+                    ZStack {
+                        PartialPillShape(roundedCornerRadius: 16)
+                            .frame(width: 300)
+                            .rotationEffect(Angle(degrees: 180))
+                            .offset(x: -10)
+                        VStack {
+                            
+                        }
+                    }
+                }.frame(height: 80)
+                    .offset(x: 10)
             }
             .previewDevice(PreviewDevice(rawValue: device))
             .previewDisplayName(device)

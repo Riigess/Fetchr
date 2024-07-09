@@ -18,8 +18,13 @@ struct SetupConnectionView: View {
     @State private var bodyString:String = ""
     @State private var offset = CGSize.zero
     @State private var bodySendableType:BodySendableType = .string //Set default text
+    @FocusState private var isInputActive:Bool // Taken from https://www.hackingwithswift.com/quick-start/swiftui/how-to-add-a-toolbar-to-the-keyboard
     private let deviceWidth:CGFloat
     private let deviceHeight:CGFloat
+    
+    private let textFieldGray:CGFloat = 225.0/255.0
+    private let textFieldBorderColor:Color
+    private let defaultSystemGray:Color = Color(UIColor.systemGray4)
     
     init(requestData:RequestData, deviceWidth:CGFloat, deviceHeight:CGFloat) {
         self.requestData = requestData
@@ -28,6 +33,8 @@ struct SetupConnectionView: View {
         self.deviceHeight = deviceHeight
         self.headerRows = []
         self.bodyRows = []
+        
+        self.textFieldBorderColor = Color(red: textFieldGray, green: textFieldGray, blue:textFieldGray)
         
         for row in requestData.headerData.headerRows {
             self.headerRows.append(row)
@@ -70,9 +77,8 @@ struct SetupConnectionView: View {
                                                     deviceHeight: self.deviceHeight,
                                                     headerRows: headerRows)
                                 .frame(width: self.deviceWidth)
-                                .onAppear {
-                                    print("DeviceWidth passed: \(deviceWidth)")
-                                }
+                                .scrollDismissesKeyboard(.interactively)
+                                .focused($isInputActive)
                             }
                         }
                     }
@@ -86,11 +92,64 @@ struct SetupConnectionView: View {
                         ZStack {
                             RoundedRectangle(cornerRadius: 35)
                                 .frame(width: deviceWidth - 120, height: 40)
-                                .foregroundStyle(Color(UIColor.systemGray4))
+                                .foregroundStyle(defaultSystemGray)
                             Text("Add")
                                 .frame(width: 240, height: 30, alignment: .center)
                                 .foregroundStyle(Color.blue)
                         }
+                    }
+                }
+                Section {
+                    Text("Body Data")
+                        .font(.headline)
+                        .padding(.horizontal)
+                    HStack {
+                        Picker("HTTP Body Type", selection: $bodySendableType) {
+                            ForEach(BodySendableType.allCases) { sendableType in
+                                Text(sendableType.rawValue)
+                                    .tag(sendableType)
+                            }
+                        }
+                        .frame(width: deviceWidth - 120)
+                        .foregroundStyle(Color.black)
+                        .pickerStyle(SegmentedPickerStyle())
+                    }
+                    TextEditor(text: $bodyString)
+                        .frame(width: deviceWidth - 120, height: 400)
+                        .border(textFieldBorderColor, width: 1)
+                        .focused($isInputActive)
+                        .toolbar {
+                            ToolbarItemGroup(placement: .keyboard) {
+                                Spacer()
+                                Button {
+                                    isInputActive = false
+                                } label: {
+                                    Text("Done")
+                                        .foregroundStyle(Color.blue)
+                                }
+                            }
+                        }
+                        .onTapGesture(coordinateSpace: .local) { tapLocation in
+                            if isInputActive {
+                                isInputActive = false
+                            }
+                        }
+                }
+                Button {
+                    print("Make request for data (below):")
+                    print(requestData.description)
+                    print("HeaderRows: ")
+                    for row in headerRows {
+                        print("\t\"\(row.key)\": \"\(row.value)\"")
+                    }
+                } label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 20)
+                            .frame(width: deviceWidth - 120, height: 40)
+                            .foregroundStyle(defaultSystemGray)
+                            .padding(.vertical, 10)
+                        Text("Make Request")
+                            .foregroundStyle(Color.blue)
                     }
                 }
             }
