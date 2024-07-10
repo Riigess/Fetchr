@@ -14,6 +14,10 @@ final class HeaderRow {
     var key:String
     var value:String
     
+    var description:String {
+        return "<HeaderRow: \(key): \(value)>"
+    }
+    
     init(key:String, value:String) {
         self.id = UUID()
         self.key = key

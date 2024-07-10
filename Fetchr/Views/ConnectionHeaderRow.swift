@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct ConnectionHeaderRow: View {
+    @Environment(\.modelContext) private var modelContext
     var headerRow:HeaderRow
     
     let deviceWidth:CGFloat
@@ -40,7 +41,8 @@ struct ConnectionHeaderRow: View {
                 ZStack {
                     PartialPillShape(roundedCornerRadius: 20)
                         .frame(width: 50)
-                        .foregroundStyle(isHeaderRow ? headerTab : Color.blue)
+                        //Force red color if only Value is provided
+                        .foregroundStyle(isHeaderRow ? headerTab : (headerTab != .red ? Color.blue : Color.red))
                         .onAppear {
                             if self.headerKey.isEmpty && !self.headerValue.isEmpty {
                                 headerTab = .red
@@ -83,6 +85,8 @@ struct ConnectionHeaderRow: View {
                                 } else if !headerValue.isEmpty {
                                     headerTab = Color.red
                                 }
+                                attemptSaveData()
+                                print("Attempted to save for row named \(headerRow.key)")
                             }
                     }
                     .frame(width: deviceWidth - 100)
@@ -124,6 +128,27 @@ struct ConnectionHeaderRow: View {
     
     func deleteRow(at offsets:IndexSet) {
         self.headerRows.remove(atOffsets: offsets)
+    }
+    
+    func attemptSaveData(waitForCompletion:Bool = false) {
+        let saveQueue = DispatchQueue(label: "Fetchr-savestoreheader-\(headerKey)")
+        if !waitForCompletion {
+            saveQueue.async {
+                do {
+                    try modelContext.save()
+                } catch {
+                    print("Failed to save due to \(error)")
+                }
+            }
+        }else {
+            saveQueue.asyncAndWait {
+                do {
+                    try modelContext.save()
+                } catch {
+                    print("Failed to save due to \(error)")
+                }
+            }
+        }
     }
 }
 

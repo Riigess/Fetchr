@@ -14,7 +14,12 @@ final class HeaderData:CustomStringConvertible {
     var headerRows:[HeaderRow]
     
     var description: String {
-        return "<\(type(of: self)): id=\(id.uuidString) | headerRows=\(headerRows.description)>"
+        var headerRowDescriptions:[String] = []
+        for row in headerRows {
+            headerRowDescriptions.append(row.description)
+        }
+        let headerRowsDescriptionStr:String = headerRowDescriptions.joined(separator: ", ")
+        return "<\(type(of: self)): id=\(id.uuidString) | headerRows=[\(headerRowsDescriptionStr)]>"
     }
     
     init() {
