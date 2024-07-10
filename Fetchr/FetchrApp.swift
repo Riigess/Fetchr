@@ -18,7 +18,7 @@ struct FetchrApp: App {
             BodyData.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
-        
+
         do {
             let container = try ModelContainer(for: schema, configurations: [modelConfiguration])
             let predicate = #Predicate<RequestData> {
@@ -26,7 +26,7 @@ struct FetchrApp: App {
             }
             let descriptor = FetchDescriptor<RequestData>(predicate: predicate)
             
-#if DEBUG && !RELEASE
+            #if DEBUG && !RELEASE
             if try container.mainContext.fetch(descriptor).count == 0 {
                 let urls = ["https://api.riotgames.com/v3/blah/blah/nah/nah", "https://api.riotgames.com/v3/nah/nah/blah/blah", "https://api.riotgames.com/v3/blah/blah/nah"]
                 let requestTypes = [RequesterMethod.GET, RequesterMethod.DELETE, RequesterMethod.PUT, RequesterMethod.POST]
@@ -49,19 +49,19 @@ struct FetchrApp: App {
                 }
                 print("RequestData Length: \(try container.mainContext.fetch(descriptor).count)")
             }
-#endif
+            #endif
             return container
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
-    
+
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
         .modelContainer(sharedModelContainer)
-#if os(macOS)
+    #if os(macOS)
         MenuBarExtra("Inspect", systemImage: "eyedropper") {
             VStack {
                 Button("Action One") {
@@ -69,6 +69,6 @@ struct FetchrApp: App {
                 }
             }
         }
-#endif
+    #endif
     }
 }

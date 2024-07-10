@@ -11,7 +11,7 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var requestsData:[RequestData]
-    
+
     var body: some View {
         NavView()
             .modelContext(modelContext)

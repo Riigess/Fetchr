@@ -35,7 +35,7 @@ struct HomeView: View {
                             SetupConnectionView(requestData: row,
                                                 deviceWidth: self.deviceWidth,
                                                 deviceHeight: self.deviceHeight)
-                            .modelContext(modelContext)
+                                .modelContext(modelContext)
                         } label: {
                             #if os(tvOS)
                                 MenuRow(requestType: row.method,
@@ -45,7 +45,7 @@ struct HomeView: View {
                                         rowWidth: 1600)
                                     .frame(width: 1600)
                             #elseif os(iOS)
-                            MenuRow(requestType: row.method,
+                                MenuRow(requestType: row.method,
                                         name: row.name,
                                         hasData: false,
                                         url: row.url,
@@ -63,9 +63,7 @@ struct HomeView: View {
                 return KeyPress.Result.handled
             }
             .task {
-                if let result = searchResults.first {
-                    print("SearchResults: \(result.description)")
-                }
+                print("SearchResults: \(searchResults.description)")
             }
             //Do not leave the Add button in the bottom-right of the screen on tvOS/macOS/visionOS
             #if os(iOS)
@@ -88,7 +86,6 @@ struct HomeView: View {
                                                 deviceWidth: self.deviceWidth,
                                                 deviceHeight: self.deviceHeight)
                                 .navigationTitle("New Request")
-                                .modelContext(modelContext)
                         }
                     }
                 }
