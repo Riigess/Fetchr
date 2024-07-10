@@ -35,6 +35,7 @@ struct DeleteButton_Previews:PreviewProvider {
         HeaderRow(key: "Testing Header Row B", value: "short value"),
         HeaderRow(key: "X-Riot-Api-Token", value: "rapi_iuhefwiuhgbuiagbirgiuefwiuewfhuewfijoherghuerghui23456789")
     ]
+    
     static var previews: some View {
         ForEach(headerRows, id: \.self) { headerRow in
             DeleteButton(headerRows: $headerRows, headerRow: headerRow, onDelete: delete)
