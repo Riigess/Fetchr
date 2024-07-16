@@ -18,9 +18,20 @@
 		D3673AB22C31140B00EA6A8B /* Fetchr_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3673AB12C31140B00EA6A8B /* Fetchr_Watch_AppUITests.swift */; };
 		D3673AB42C31140B00EA6A8B /* Fetchr_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3673AB32C31140B00EA6A8B /* Fetchr_Watch_AppUITestsLaunchTests.swift */; };
 		D3673AB72C31140B00EA6A8B /* Fetchr Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D3673A942C31140A00EA6A8B /* Fetchr Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D38D43EB2C409C6500BB84E4 /* OSVersionCompatibilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D43EA2C409C6000BB84E4 /* OSVersionCompatibilities.swift */; };
+		D38D43ED2C409C7900BB84E4 /* OSVersionBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D43EC2C409C7500BB84E4 /* OSVersionBounds.swift */; };
+		D38D43EF2C409CBE00BB84E4 /* AssetReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D43EE2C409CBB00BB84E4 /* AssetReceipt.swift */; };
+		D38D43F12C409E2E00BB84E4 /* Transformations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D43F02C409E2900BB84E4 /* Transformations.swift */; };
+		D38D43F32C40A1BD00BB84E4 /* AssetVersionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D43F22C40A1BA00BB84E4 /* AssetVersionInfo.swift */; };
+		D38D43F52C40A1D200BB84E4 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D43F42C40A1D000BB84E4 /* Asset.swift */; };
+		D38D43F72C40A1E500BB84E4 /* PallasResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D43F62C40A1E200BB84E4 /* PallasResponse.swift */; };
 		D3A4BCD72C3C875E00916173 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4BCD62C3C875C00916173 /* DeleteButton.swift */; };
 		D3A4BCD92C3CAEB300916173 /* BodySendableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4BCD82C3CAEAF00916173 /* BodySendableType.swift */; };
+		D3AFABE62C4261B700B70D87 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AFABE52C4261B100B70D87 /* SettingsData.swift */; };
+		D3AFABEA2C42632300B70D87 /* LicenseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AFABE92C42632000B70D87 /* LicenseData.swift */; };
 		D3B0B57D2C3B3701002F988E /* TrapezoidShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0B57C2C3B36FB002F988E /* TrapezoidShape.swift */; };
+		D3BE2EC52C3F794B00BD76BB /* ResponseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BE2EC42C3F794600BD76BB /* ResponseView.swift */; };
+		D3BE2EC72C3F7EDA00BD76BB /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BE2EC62C3F7ED500BD76BB /* ResponseData.swift */; };
 		D3E57FF02C367DC20089E2F7 /* RequesterMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FDA2C367DC20089E2F7 /* RequesterMethod.swift */; };
 		D3E57FF12C367DC20089E2F7 /* SetupConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FE92C367DC20089E2F7 /* SetupConnectionView.swift */; };
 		D3E57FF22C367DC20089E2F7 /* Requester.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FD92C367DC20089E2F7 /* Requester.swift */; };
@@ -113,10 +124,21 @@
 		D3673AAD2C31140B00EA6A8B /* Fetchr Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fetchr Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3673AB12C31140B00EA6A8B /* Fetchr_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetchr_Watch_AppUITests.swift; sourceTree = "<group>"; };
 		D3673AB32C31140B00EA6A8B /* Fetchr_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetchr_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D38D43EA2C409C6000BB84E4 /* OSVersionCompatibilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSVersionCompatibilities.swift; sourceTree = "<group>"; };
+		D38D43EC2C409C7500BB84E4 /* OSVersionBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSVersionBounds.swift; sourceTree = "<group>"; };
+		D38D43EE2C409CBB00BB84E4 /* AssetReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetReceipt.swift; sourceTree = "<group>"; };
+		D38D43F02C409E2900BB84E4 /* Transformations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformations.swift; sourceTree = "<group>"; };
+		D38D43F22C40A1BA00BB84E4 /* AssetVersionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetVersionInfo.swift; sourceTree = "<group>"; };
+		D38D43F42C40A1D000BB84E4 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		D38D43F62C40A1E200BB84E4 /* PallasResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PallasResponse.swift; sourceTree = "<group>"; };
 		D3A4BCD52C3BA65600916173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D3A4BCD62C3C875C00916173 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
 		D3A4BCD82C3CAEAF00916173 /* BodySendableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodySendableType.swift; sourceTree = "<group>"; };
+		D3AFABE52C4261B100B70D87 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
+		D3AFABE92C42632000B70D87 /* LicenseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseData.swift; sourceTree = "<group>"; };
 		D3B0B57C2C3B36FB002F988E /* TrapezoidShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrapezoidShape.swift; sourceTree = "<group>"; };
+		D3BE2EC42C3F794600BD76BB /* ResponseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseView.swift; sourceTree = "<group>"; };
+		D3BE2EC62C3F7ED500BD76BB /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
 		D3E57FD42C367DC20089E2F7 /* RequesterErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequesterErrors.swift; sourceTree = "<group>"; };
 		D3E57FD62C367DC20089E2F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D3E57FD82C367DC20089E2F7 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
@@ -276,6 +298,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D38D43E92C409C4E00BB84E4 /* gdmf-and-mesu-support */ = {
+			isa = PBXGroup;
+			children = (
+				D38D43F62C40A1E200BB84E4 /* PallasResponse.swift */,
+				D38D43F42C40A1D000BB84E4 /* Asset.swift */,
+				D38D43F22C40A1BA00BB84E4 /* AssetVersionInfo.swift */,
+				D38D43F02C409E2900BB84E4 /* Transformations.swift */,
+				D38D43EE2C409CBB00BB84E4 /* AssetReceipt.swift */,
+				D38D43EC2C409C7500BB84E4 /* OSVersionBounds.swift */,
+				D38D43EA2C409C6000BB84E4 /* OSVersionCompatibilities.swift */,
+			);
+			path = "gdmf-and-mesu-support";
+			sourceTree = "<group>";
+		};
+		D3AFABE72C4262FB00B70D87 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D3AFABE92C42632000B70D87 /* LicenseData.swift */,
+				D3AFABE52C4261B100B70D87 /* SettingsData.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		D3AFABE82C42630A00B70D87 /* Connections */ = {
+			isa = PBXGroup;
+			children = (
+				D3BE2EC62C3F7ED500BD76BB /* ResponseData.swift */,
+				D3E57FDC2C367DC20089E2F7 /* BodyData.swift */,
+				D3E57FDD2C367DC20089E2F7 /* HeaderData.swift */,
+				D3E57FDE2C367DC20089E2F7 /* HeaderRow.swift */,
+				D3E57FDF2C367DC20089E2F7 /* RequestData.swift */,
+			);
+			path = Connections;
+			sourceTree = "<group>";
+		};
+		D3BE2EC32C3F793A00BD76BB /* PopoverViews */ = {
+			isa = PBXGroup;
+			children = (
+				D3BE2EC42C3F794600BD76BB /* ResponseView.swift */,
+			);
+			path = PopoverViews;
+			sourceTree = "<group>";
+		};
 		D3E57FD52C367DC20089E2F7 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +360,7 @@
 		D3E57FDB2C367DC20089E2F7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D38D43E92C409C4E00BB84E4 /* gdmf-and-mesu-support */,
 				D3A4BCD82C3CAEAF00916173 /* BodySendableType.swift */,
 				D3E57FD82C367DC20089E2F7 /* DateUtil.swift */,
 				D3E57FD92C367DC20089E2F7 /* Requester.swift */,
@@ -306,10 +372,8 @@
 		D3E57FE02C367DC20089E2F7 /* SwiftDataModels */ = {
 			isa = PBXGroup;
 			children = (
-				D3E57FDC2C367DC20089E2F7 /* BodyData.swift */,
-				D3E57FDD2C367DC20089E2F7 /* HeaderData.swift */,
-				D3E57FDE2C367DC20089E2F7 /* HeaderRow.swift */,
-				D3E57FDF2C367DC20089E2F7 /* RequestData.swift */,
+				D3AFABE82C42630A00B70D87 /* Connections */,
+				D3AFABE72C4262FB00B70D87 /* Settings */,
 			);
 			path = SwiftDataModels;
 			sourceTree = "<group>";
@@ -317,6 +381,7 @@
 		D3E57FEA2C367DC20089E2F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D3BE2EC32C3F793A00BD76BB /* PopoverViews */,
 				D3A4BCD62C3C875C00916173 /* DeleteButton.swift */,
 				D3B0B57C2C3B36FB002F988E /* TrapezoidShape.swift */,
 				D3E57FE12C367DC20089E2F7 /* AddButton.swift */,
@@ -571,27 +636,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D38D43F72C40A1E500BB84E4 /* PallasResponse.swift in Sources */,
 				D3E57FF02C367DC20089E2F7 /* RequesterMethod.swift in Sources */,
 				D3A4BCD92C3CAEB300916173 /* BodySendableType.swift in Sources */,
 				D3E57FF12C367DC20089E2F7 /* SetupConnectionView.swift in Sources */,
 				D3E57FF22C367DC20089E2F7 /* Requester.swift in Sources */,
 				D3E57FF32C367DC20089E2F7 /* MenuRow.swift in Sources */,
 				D3E57FF42C367DC20089E2F7 /* FetchrApp.swift in Sources */,
+				D38D43F32C40A1BD00BB84E4 /* AssetVersionInfo.swift in Sources */,
 				D3E57FF52C367DC20089E2F7 /* DateUtil.swift in Sources */,
 				D3E57FF62C367DC20089E2F7 /* HeaderData.swift in Sources */,
 				D3E57FF72C367DC20089E2F7 /* ConnectionHeaderRow.swift in Sources */,
 				D3E57FF82C367DC20089E2F7 /* NavView.swift in Sources */,
 				D3E57FF92C367DC20089E2F7 /* BodyData.swift in Sources */,
+				D38D43F52C40A1D200BB84E4 /* Asset.swift in Sources */,
+				D38D43EB2C409C6500BB84E4 /* OSVersionCompatibilities.swift in Sources */,
 				D3B0B57D2C3B3701002F988E /* TrapezoidShape.swift in Sources */,
 				D3A4BCD72C3C875E00916173 /* DeleteButton.swift in Sources */,
 				D3E57FFA2C367DC20089E2F7 /* AddButton.swift in Sources */,
 				D3E57FFB2C367DC20089E2F7 /* ContentView.swift in Sources */,
 				D3E57FFC2C367DC20089E2F7 /* SettingsView.swift in Sources */,
+				D3AFABEA2C42632300B70D87 /* LicenseData.swift in Sources */,
 				D3E57FFD2C367DC20089E2F7 /* AutomationView.swift in Sources */,
 				D3E57FFE2C367DC20089E2F7 /* HeaderRowData.swift in Sources */,
 				D3E57FFF2C367DC20089E2F7 /* RequesterErrors.swift in Sources */,
 				D3E580002C367DC20089E2F7 /* HeaderRow.swift in Sources */,
+				D3AFABE62C4261B700B70D87 /* SettingsData.swift in Sources */,
+				D38D43ED2C409C7900BB84E4 /* OSVersionBounds.swift in Sources */,
 				D3E580012C367DC20089E2F7 /* RequestData.swift in Sources */,
+				D38D43EF2C409CBE00BB84E4 /* AssetReceipt.swift in Sources */,
+				D3BE2EC52C3F794B00BD76BB /* ResponseView.swift in Sources */,
+				D3BE2EC72C3F7EDA00BD76BB /* ResponseData.swift in Sources */,
+				D38D43F12C409E2E00BB84E4 /* Transformations.swift in Sources */,
 				D3E580022C367DC20089E2F7 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -790,8 +866,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Fetchr/Fetchr.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2024.07;
+				CURRENT_PROJECT_VERSION = 20240711;
 				DEVELOPMENT_ASSET_PATHS = "\"Fetchr/Preview Content\"";
 				DEVELOPMENT_TEAM = WZ7Q6J2VP9;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -809,13 +886,15 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.riigess.Fetchr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riigess.fetchr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
@@ -833,8 +912,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Fetchr/Fetchr.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2024.07;
+				CURRENT_PROJECT_VERSION = 20240711;
 				DEVELOPMENT_ASSET_PATHS = "\"Fetchr/Preview Content\"";
 				DEVELOPMENT_TEAM = WZ7Q6J2VP9;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -852,13 +932,15 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.riigess.Fetchr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riigess.fetchr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
@@ -973,13 +1055,13 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Fetchr;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.riigess.Fetchr;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.riigess.fetchr;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.riigess.Fetchr.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riigess.fetchr.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1003,13 +1085,13 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Fetchr;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.riigess.Fetchr;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.riigess.fetchr;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.riigess.Fetchr.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riigess.fetchr.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;

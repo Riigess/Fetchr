@@ -17,7 +17,11 @@ struct FetchrApp: App {
             HeaderRow.self,
             BodyData.self,
         ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
+        #if DEBUG
+            let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
+        #else
+            let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+        #endif
 
         do {
             let container = try ModelContainer(for: schema, configurations: [modelConfiguration])
@@ -28,8 +32,14 @@ struct FetchrApp: App {
             
             #if DEBUG && !RELEASE
             if try container.mainContext.fetch(descriptor).count == 0 {
-                let urls = ["https://api.riotgames.com/v3/blah/blah/nah/nah", "https://api.riotgames.com/v3/nah/nah/blah/blah", "https://api.riotgames.com/v3/blah/blah/nah"]
-                let requestTypes = [RequesterMethod.GET, RequesterMethod.DELETE, RequesterMethod.PUT, RequesterMethod.POST]
+                let urls = ["http://192.168.15.103:20080/trazadone",
+                            "https://na1.api.riotgames.com/lol/platform/v3/champion-rotations",
+                            "https://api.riotgames.com/v3/nah/nah/blah/blah",
+                            "https://api.riotgames.com/v3/blah/blah/nah"]
+                let requestTypes = [RequesterMethod.GET,
+                                    RequesterMethod.DELETE,
+                                    RequesterMethod.PUT,
+                                    RequesterMethod.POST]
                 var transferableData:[[Any]] = []
                 for i in 0..<20 {
                     transferableData.append([])

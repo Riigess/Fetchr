@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum RequesterMethod:String, Codable {
+enum RequesterMethod:String, Codable, CaseIterable, Identifiable {
     case GET = "GET"
     case POST = "POST"
     case PUT = "PUT"
@@ -16,4 +16,19 @@ enum RequesterMethod:String, Codable {
     case HEAD = "HEAD"
     case OPTIONS = "OPTIONS"
     case TRACE = "TRACE"
+    
+    var id: String {
+        return rawValue
+    }
+    
+    static var allCases: [String] {
+        return [GET.rawValue,
+                POST.rawValue,
+                PUT.rawValue,
+                DELETE.rawValue,
+                PATCH.rawValue,
+                HEAD.rawValue,
+                OPTIONS.rawValue,
+                TRACE.rawValue]
+    }
 }

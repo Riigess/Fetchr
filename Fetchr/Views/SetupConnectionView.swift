@@ -13,6 +13,7 @@ struct SetupConnectionView: View {
     @State private var requestData: RequestData
     
     @State private var urlField:String
+    @State private var requestMethodType:RequesterMethod
     @State private var headerRows: [HeaderRow]
     @State private var bodyRows: [BodyData]
     @State private var bodyString:String = ""
@@ -27,22 +28,30 @@ struct SetupConnectionView: View {
     private let defaultSystemGray:Color = Color(UIColor.systemGray4)
     private let sectionBreak:CGFloat = 15.0
     
+    
+    @State private var requestResponsePopover:Bool = false
+    @State private var responseBodyData:BodyData
+    @State private var responseHeaderRows:[HeaderRow]
+    
     init(requestData:RequestData, deviceWidth:CGFloat, deviceHeight:CGFloat) {
         self.requestData = requestData
-        self.urlField = requestData.url
+        self.urlField = "\(requestData.url)"
         self.deviceWidth = deviceWidth
         self.deviceHeight = deviceHeight
         self.headerRows = []
         self.bodyRows = []
+        self.responseBodyData = BodyData(strContent: nil, jsonBodyString: nil)
+        self.responseHeaderRows = []
+        self.requestMethodType = .GET
         
         self.textFieldBorderColor = Color(red: textFieldGray, green: textFieldGray, blue:textFieldGray)
         
-//        if let jsonData = requestData.bodyData.jsonBodyString {
-//            TODO: Iterate through JSON data to add it in to the array
-//        }
-//        if let jsonDesc = requestData.bodyData.strContent {
-//            TODO: Add a String TextBlock for the content
-//        }
+        //        if let jsonData = requestData.bodyData.jsonBodyString {
+        //            TODO: Iterate through JSON data to add it in to the array
+        //        }
+        //        if let jsonDesc = requestData.bodyData.strContent {
+        //            TODO: Add a String TextBlock for the content
+        //        }
         
         let date = Date()
         print("------- SetupConnectionView init called at \(date.description) -------")
@@ -61,11 +70,17 @@ struct SetupConnectionView: View {
                         }
                     }
                 TextField("URL", text: $urlField)
-                #if os(iOS)
+#if os(iOS)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                #endif
+#endif
                     .padding(.horizontal)
-                
+                Picker("Request Method Selector", selection: $requestMethodType) {
+                    ForEach(RequesterMethod.allCases) { httpMethod in
+                        Text(httpMethod.rawValue)
+                            .tag(httpMethod)
+                    }
+                }
+                .pickerStyle(.segmented)
                 Section {
                     Text("Header Data")
                         .font(.headline)
@@ -143,31 +158,70 @@ struct SetupConnectionView: View {
                                 }
                             }
                     } else if bodySendableType == .json { //TODO: Requirement to add JSON, add in the ability to reuse the Header Data <--> tabs as Body Data tabs
-//                        Button {
-//                            bodyRows.append(BodyData(strContent: nil, jsonBodyString: ""))
-//                        } label: {
-//                            ZStack {
-//                                RoundedRectangle(cornerRadius: 20)
-//                                    .frame(width: deviceWidth - 120, height: 40)
-//                                    .foregroundStyle(Color(UIColor.systemGray4))
-//                                Text("Add Body Row")
-//                            }
-//                        }
+                        //                        Button {
+                        //                            bodyRows.append(BodyData(strContent: nil, jsonBodyString: ""))
+                        //                        } label: {
+                        //                            ZStack {
+                        //                                RoundedRectangle(cornerRadius: 20)
+                        //                                    .frame(width: deviceWidth - 120, height: 40)
+                        //                                    .foregroundStyle(Color(UIColor.systemGray4))
+                        //                                Text("Add Body Row")
+                        //                            }
+                        //                        }
                     }
                 }
                 Button {
                     print("Make request for data (below):")
                     print(requestData.description)
                     print("HeaderRows: ")
+                    let isPreview = ProcessInfo.processInfo.environment["PREVIEW"] != nil && ProcessInfo.processInfo.environment["PREVIEW"] == "1"
+                    print("Made request for Preview: \(isPreview)")
+                    print("HeaderRows:")
                     for row in headerRows {
                         print("\t\"\(row.key)\": \"\(row.value)\"")
                     }
+                    print("bodyString: \(bodyString)")
                     //Attempt to add HeaderData to SwiftData and save that
                     if requestData.headerData.headerRows.count != headerRows.count {
                         requestData.headerData.headerRows = headerRows
                     }
                     saveData()
+                    if requestData.url != urlField {
+                        requestData.url = urlField
+                    }
+                    if requestData.method != requestMethodType {
+                        requestData.method = requestMethodType
+                    }
                     print("Attempted to save for Row named \(requestData.name) and URL \(requestData.url)")
+                    
+                    let requester = Requester()
+                    let headerDict = requester.convertHeaderDataToDictionary(headerData: requestData.headerData)
+                    requester.makeRequest(url: requestData.url, method: requestData.method, headers: headerDict, body: bodyString) { result, err in
+                        if let err = err {
+                            fatalError("Error found \(err)")
+                        }
+                        if let result = result {
+                            if !requestData.url.contains("https://(gdmf|mesu).apple.com") {
+                                responseBodyData = BodyData(strContent: result, jsonBodyString: nil)
+                            } else {
+                                if !result.isEmpty {
+                                    do {
+                                        let decoder = JSONDecoder()
+                                        let json = result.data(using: .utf8)!
+                                        let prod = try decoder.decode(PallasResponse.self, from: json)
+                                        let encoder = JSONEncoder()
+                                        encoder.outputFormatting = .prettyPrinted
+                                        let data = try encoder.encode(prod)
+                                        responseBodyData = BodyData(strContent: String(data: data, encoding: .utf8)!, jsonBodyString: nil)
+                                    } catch {
+                                        fatalError("unable to convert data to data type with error, \(error)")
+                                    }
+                                }
+                            }
+                        }
+                        requestResponsePopover = true
+                        print("Request completed with response \(bodyString)")
+                    }
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 20)
@@ -178,6 +232,11 @@ struct SetupConnectionView: View {
                             .foregroundStyle(Color.blue)
                     }
                 }
+                //For the popover page - https://www.swiftyplace.com/blog/swiftui-popovers-and-popups
+                .popover(isPresented: $requestResponsePopover) {
+                    ResponseView(headerRows: $responseHeaderRows, bodyData: $responseBodyData, dismiss: $requestResponsePopover)
+                }
+                //TODO: Create "View Last Request" button if there is a previous request stored in RequestData
             }
         }
     }
@@ -201,7 +260,7 @@ struct SetupConnectionView_Preview: PreviewProvider {
     static let deviceHeight:CGFloat = UIScreen.main.bounds.height
     
     static var previews: some View {
-        SetupConnectionView(requestData: RequestData(url: "https://api.riotgames.com/v3/blah/blah/nah/nah", method: .GET, name: "Test00"),
+        SetupConnectionView(requestData: RequestData(url: "https://192.168.15.68:20080/trazadone", method: .GET, name: "Test00"),
                             deviceWidth: deviceWidth,
                             deviceHeight: deviceHeight)
     }

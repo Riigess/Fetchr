@@ -18,26 +18,49 @@ class Requester {
     init() {
     }
     
-    func makeRequest(url:String = "", method:RequesterMethod = .GET, headers:Dictionary<String, String>, body:String) -> String {
-        guard let url = URL(string: url) else { return "" }
+    func convertHeaderDataToDictionary(headerData:HeaderData) -> Dictionary<String,String> {
+        var toReturn = [String:String]()
+        for row in headerData.headerRows {
+            toReturn.updateValue(row.value, forKey: row.key)
+        }
+        return toReturn
+    }
+    
+    func makeRequest(url:String = "", method:RequesterMethod = .GET, headers:Dictionary<String, String>, body:String, completionHandler: @escaping (String?,Error?) -> Void) {
+        //Build URL
+        guard let url = URL(string: url) else { return }
+        //Build HTTP Request (including url, method, headers, and body values)
         var request = URLRequest(url: url)
-        request.httpMethod = "\(method)"
+        request.httpMethod = "\(method.rawValue)"
         for(key, value) in headers {
             request.setValue(value, forHTTPHeaderField: key)
         }
         if body.count > 0 {
             request.httpBody = body.data(using: .utf8)
         }
-        var toReturn:String = ""
-//        var err:String = ""
-        URLSession.shared.dataTask(with: request) { (data, response, err) in
+        
+        //Complete the request
+        let task = URLSession.shared.dataTask(with: request) { (data, response, err) in
             guard err == nil else {
-                print("Failed with error \(err.debugDescription)")
+                completionHandler(nil, err)
                 return
             }
-            toReturn = String(data: data!, encoding: .utf8)!
-        }.resume()
-        return toReturn
+            if !url.absoluteString.contains("https://gdmf.apple.com") && !url.absoluteString.contains("https://mesu.apple.com") {
+                completionHandler(String(data: data!, encoding: .utf8)!, nil)
+            } else {
+                //If this reaches Pallas
+                if let resp = data {
+                    let respStr = String(data: resp, encoding: .utf8)!
+                    let trimmed = respStr.split(separator: ".")[1]
+                    var decodedString = ""
+                    if let converted = Data(base64Encoded: String(trimmed) + "==") { //TODO: Calculate this so we switch this to a toggle later
+                        decodedString = String(data: converted, encoding: .utf8)!
+                    }
+                    completionHandler(decodedString, nil) //Return decoded string for view to handle
+                }
+            }
+        }
+        task.resume()
     }
     
     func fileToUrl(filePath:String="/tmp/temporarylFile.temp") -> URL? {
@@ -64,13 +87,13 @@ class Requester {
             urlOrNil, responseOrNil, errorOrNil in
             
             guard errorOrNil == nil else {
-                print("Error when downloading file \(errorOrNil)")
+                print("Error when downloading file \(String(describing: errorOrNil))")
                 return
             }
             
             guard let fileURL = urlOrNil else { return }
             do {
-                var documentsURL = try FileManager.default.url(for: .downloadsDirectory,
+                let documentsURL = try FileManager.default.url(for: .downloadsDirectory,
                                                                in: .userDomainMask,
                                                                appropriateFor: nil,
                                                                create: true)
@@ -91,7 +114,9 @@ class Requester {
         let backgroundTask = urlSession.downloadTask(with: URL(string: url)!)
         backgroundTask.earliestBeginDate = earliestBeginDate
         backgroundTask.countOfBytesClientExpectsToSend = 200
-        backgroundTask.countOfBytesClientExpectsToReceive = 500 * 1024 // Can I calculate this somehow?
+        
+        // Can I calculate this somehow? Or pull this from a Header somehow?
+        backgroundTask.countOfBytesClientExpectsToReceive = 500 * 1024
     }
     
     func saveToFile(data:Data, fileLocation:String) throws {

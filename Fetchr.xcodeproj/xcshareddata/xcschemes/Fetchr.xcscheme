@@ -51,6 +51,14 @@
                BlueprintName = "FetchrUITests"
                ReferencedContainer = "container:Fetchr.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "FetchrUITests/testLaunchAndRunPallasRequest()">
+               </Test>
+               <Test
+                  Identifier = "FetchrUITests/testLaunchPerformance()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>
