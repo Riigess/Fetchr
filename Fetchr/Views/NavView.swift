@@ -50,72 +50,78 @@ struct NavView: View {
     }
     
     var body: some View {
-        if #available(iOS 18.0, tvOS 18.0, watchOS 11.0, macOS 15.0, *) {
-            TabView {
-                Tab("Home", systemImage: "house") {
-                    HomeView(navTitle: "REST Requester")
-                        .modelContext(modelContext)
-                }
-                Tab("Automation", systemImage: "wrench") {
-                    AutomationView()
-                        .modelContext(modelContext)
-                }
-                Tab("Settings", systemImage: "gear") {
-                    SettingsView()
-                        .modelContext(modelContext)
-                }
-                #if os(tvOS)
-                Tab {
-                    SetupConnectionView()
-                } label: {
-                    Image(systemName: "square.and.pencil")
-                }
-                #endif
-            }
-            #if DEBUG
-            .task {
-                print("iOS 18.0")
-            }
-            #endif
-            .tint(.white)
-        }
-        else if #available(iOS 17.0, tvOS 17.0, watchOS 10.0, macOS 14.0, *) {
+        WindowGroup {
             NavigationView {
-                TabView(selection: $selection) {
-                    HomeView(navTitle: "REST Requester")
-                        .tabItem {
-                            Label("Home", systemImage: "house")
-                        }
-                        .tag(0)
-                    AutomationView()
-                        .tabItem {
-                            Label("Automation", systemImage: "wrench")
-                        }
-                        .tag(1)
-                    SettingsView()
-                        .tabItem {
-                            Label("Settings", systemImage: "gear")
-                        }
-                        .tag(2)
-                    #if os(tvOS)
-                    SetupConnectionView()
-                        .tabItem {
-                            Label("New", systemImage: "square.and.pencil")
-                        }
-                    #endif
-                }
-                #if DEBUG
-                .task {
-                    print("iOS 17.X")
-                }
-                #endif
-                .tint(.white)
-                .onAppear {
-                    UITabBar.appearance().unselectedItemTintColor = .white
-                    print("Appeared")
-                }
+                
             }
         }
+//        if #available(iOS 18.0, tvOS 18.0, watchOS 11.0, macOS 15.0, *) {
+//            TabView {
+//                Tab("Home", systemImage: "house") {
+//                    HomeView(navTitle: "REST Requester")
+//                        .modelContext(modelContext)
+//                }
+//                Tab("Automation", systemImage: "wrench") {
+//                    AutomationView()
+//                        .modelContext(modelContext)
+//                }
+//                Tab("Settings", systemImage: "gear") {
+//                    SettingsView()
+//                        .modelContext(modelContext)
+//                }
+//                #if os(tvOS)
+//                Tab {
+//                    SetupConnectionView()
+//                } label: {
+//                    Image(systemName: "square.and.pencil")
+//                }
+//                #endif
+//            }
+//            #if DEBUG
+//            .task {
+//                print("iOS 18.0")
+//            }
+//            #endif
+//            .tint(.white)
+//        }
+//        else if #available(iOS 17.0, tvOS 17.0, watchOS 10.0, macOS 14.0, *) {
+//            NavigationView {
+//                TabView(selection: $selection) {
+//                    HomeView(navTitle: "REST Requester")
+//                        .tabItem {
+//                            Label("Home", systemImage: "house")
+//                        }
+//                        .tag(0)
+//                    AutomationView()
+//                        .tabItem {
+//                            Label("Automation", systemImage: "wrench")
+//                        }
+//                        .tag(1)
+//                    SettingsView()
+//                        .tabItem {
+//                            Label("Settings", systemImage: "gear")
+//                        }
+//                        .tag(2)
+//                    #if os(tvOS)
+//                    SetupConnectionView()
+//                        .tabItem {
+//                            Label("New", systemImage: "square.and.pencil")
+//                        }
+//                    #endif
+//                }
+//                #if DEBUG
+//                .task {
+//                    print("iOS 17.X")
+//                }
+//                #endif
+//                .tint(.white)
+//                .onAppear {
+//                    UITabBar.appearance().unselectedItemTintColor = .white
+//                    print("Appeared")
+//                }
+//            }
+//        }
+        
     }
 }
 

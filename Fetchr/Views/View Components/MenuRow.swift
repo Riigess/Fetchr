@@ -24,8 +24,6 @@ struct MenuRow: View {
         
         self.rowWidth = rowWidth
         self.rowHeight = rowHeight
-//        print("rowWidth: \(rowWidth)")
-//        print("rowHeight: \(rowHeight)")
     }
     
     func requestTypeButtonColor(requestType:RequesterMethod) -> Color {
