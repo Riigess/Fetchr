@@ -12,6 +12,7 @@ struct SetupConnectionView: View {
     @Environment(\.modelContext) private var modelContext
     @State private var requestData: RequestData
     
+    @State private var nameField:String
     @State private var urlField:String
     @State private var requestMethodType:RequesterMethod
     @State private var headerRows: [HeaderRow]
@@ -19,7 +20,6 @@ struct SetupConnectionView: View {
     @State private var bodyString:String = ""
     @State private var offset = CGSize.zero
     @State private var bodySendableType:BodySendableType = .string //Set default text
-    @FocusState private var isInputActive:Bool // Taken from https://www.hackingwithswift.com/quick-start/swiftui/how-to-add-a-toolbar-to-the-keyboard
     private let deviceWidth:CGFloat
     private let deviceHeight:CGFloat
     
@@ -28,23 +28,30 @@ struct SetupConnectionView: View {
     private let defaultSystemGray:Color = Color(UIColor.systemGray4)
     private let sectionBreak:CGFloat = 15.0
     
-    
     @State private var requestResponsePopover:Bool = false
-    @State private var responseBodyData:BodyData
+    @Binding private var responseBodyData:BodyData
     @State private var responseHeaderRows:[HeaderRow]
     
-    init(requestData:RequestData, deviceWidth:CGFloat, deviceHeight:CGFloat) {
+    //TODO: Make these part of the initializer
+    @State var useJWT:Bool = false
+    @State var useBase64:Bool = false
+    
+    @Binding var navPath:[Int]
+    
+    init(requestData:RequestData, deviceWidth:CGFloat, deviceHeight:CGFloat, responseBodyData:Binding<BodyData>, navPath:Binding<[Int]>) {
         self.requestData = requestData
         self.urlField = "\(requestData.url)"
+        self.nameField = "\(requestData.name)"
         self.deviceWidth = deviceWidth
         self.deviceHeight = deviceHeight
         self.headerRows = []
         self.bodyRows = []
-        self.responseBodyData = BodyData(strContent: nil, jsonBodyString: nil)
         self.responseHeaderRows = []
         self.requestMethodType = .GET
         
         self.textFieldBorderColor = Color(red: textFieldGray, green: textFieldGray, blue:textFieldGray)
+        self._responseBodyData = responseBodyData
+        self._navPath = navPath
         
         //        if let jsonData = requestData.bodyData.jsonBodyString {
         //            TODO: Iterate through JSON data to add it in to the array
@@ -54,133 +61,78 @@ struct SetupConnectionView: View {
         //        }
         
         let date = Date()
+        #if !RELEASE
         print("------- SetupConnectionView init called at \(date.description) -------")
+        #endif
     }
     
     var body: some View {
         ScrollView {
-            VStack {
-                Text("")
-                    .frame(width: 5)
-                    .onAppear {
-                        if self.headerRows.count != requestData.headerData.headerRows.count {
-                            for row in requestData.headerData.headerRows {
-                                self.headerRows.append(row)
-                            }
-                        }
-                    }
+            VStack(spacing: 10) { //Using 30 instead of increasing to an extra large padding
+                //Name Field
+                TextField("Name", text: $nameField)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(.horizontal)
+                    .padding(.top, 5)
+                //URL Field
                 TextField("URL", text: $urlField)
 #if os(iOS)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
 #endif
                     .padding(.horizontal)
-                Picker("Request Method Selector", selection: $requestMethodType) {
-                    ForEach(RequesterMethod.allCases) { httpMethod in
-                        Text(httpMethod.rawValue)
-                            .tag(httpMethod)
+                
+                //TODO: Make this just generically look better
+                //Method selector
+                ZStack {
+                    Picker("Request Method Selector", selection: $requestMethodType) {
+                        ForEach(RequesterMethod.allCases) { httpMethod in
+                            Text(httpMethod.rawValue)
+                                .tag(httpMethod)
+                        }
                     }
+                    .pickerStyle(.menu)
+                    .frame(width: deviceWidth - 120, alignment: .trailing)
+                    
+                    Text("Request Method Selector")
+                        .frame(width: 240, alignment: .leading)
+                        .offset(x: -20, y: -1)
                 }
-                .pickerStyle(.segmented)
-                Section {
-                    Text("Header Data")
-                        .font(.headline)
-                        .padding(.horizontal)
-                        .padding(.top, sectionBreak)
-                    ForEach(headerRows, id: \.self) { headerRow in
-                        ZStack {
-                            DeleteButton(headerRows: $headerRows, headerRow: headerRow, onDelete: deleteRow)
-                                .offset(x: (deviceWidth/2) - 60) //Offset from (deviceWidth/2, deviceHeight/2) as origin
-                            HStack {
-                                ConnectionHeaderRow(headerRow: headerRow,
-                                                    deviceWidth: self.deviceWidth,
-                                                    deviceHeight: self.deviceHeight,
-                                                    headerRows: headerRows)
-                                .frame(width: self.deviceWidth)
-                                .scrollDismissesKeyboard(.interactively)
-                                .focused($isInputActive)
-                            }
-                        }
-                    }
-                    .onDelete(perform: { idxSet in
-                        headerRows.remove(atOffsets: idxSet)
-                    })
-                    Button {
-                        let headerRow = HeaderRow(key: "", value: "")
-                        self.headerRows.append(headerRow)
-                    } label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 35)
-                                .frame(width: deviceWidth - 120, height: 40)
-                                .foregroundStyle(defaultSystemGray)
-                            Text("Add")
-                                .frame(width: 240, height: 30, alignment: .center)
-                                .foregroundStyle(Color.blue)
-                        }
-                    }
+                .frame(width: deviceWidth - 120, height: 20)
+                
+                //Header Data Section
+                Button {
+                    self.navPath.append(4) //4 is the ConnectionHeaderDataView reference in NavView
+                } label: {
+                    NavViewRow(name: "Header Data",
+                               refText: "\(self.requestData.headerData.headerRows.count) keys")
+                    .frame(width: deviceWidth - 55, height: 40)
                 }
-                Section {
-                    Text("Body Data")
-                        .font(.headline)
-                        .padding(.horizontal)
-                        .padding(.top, sectionBreak)
-                    HStack {
-                        Picker("HTTP Body Type", selection: $bodySendableType) {
-                            ForEach([BodySendableType.string]) { sendableType in //TODO: Add the the other options
-                                Text(sendableType.rawValue)
-                                    .tag(sendableType)
-                            }
-                        }
-                        .frame(width: deviceWidth - 120)
-                        .foregroundStyle(Color.black)
-                        .pickerStyle(SegmentedPickerStyle())
-                    }
-                    .padding(.bottom, 10)
-                    if bodySendableType == .string {
-                        TextEditor(text: $bodyString)
-                            .frame(width: deviceWidth - 120, height: 400)
-                            .border(textFieldBorderColor, width: 1)
-                        //Warning: This may eventually create strange behavior.. Maybe consider changing it
-                            .focused($isInputActive)
-                            .toolbar {
-                                ToolbarItemGroup(placement: .keyboard) {
-                                    Spacer()
-                                    Button {
-                                        isInputActive = false
-                                    } label: {
-                                        Text("Done")
-                                            .foregroundStyle(Color.blue)
-                                    }
-                                }
-                            }
-                            .onTapGesture(coordinateSpace: .local) { tapLocation in
-                                if isInputActive {
-                                    isInputActive = false
-                                }
-                            }
-                    } else if bodySendableType == .json { //TODO: Requirement to add JSON, add in the ability to reuse the Header Data <--> tabs as Body Data tabs
-                        //                        Button {
-                        //                            bodyRows.append(BodyData(strContent: nil, jsonBodyString: ""))
-                        //                        } label: {
-                        //                            ZStack {
-                        //                                RoundedRectangle(cornerRadius: 20)
-                        //                                    .frame(width: deviceWidth - 120, height: 40)
-                        //                                    .foregroundStyle(Color(UIColor.systemGray4))
-                        //                                Text("Add Body Row")
-                        //                            }
-                        //                        }
-                    }
+                
+                //Body Data Section
+                Button {
+                    self.navPath.append(5) //5 is the ConnectionBodyDataView reference in NavView
+                } label: {
+                    NavViewRow(name: "Body Data",
+                               refText: "\((self.requestData.bodyData.strContent ?? (self.requestData.bodyData.jsonBodyString ?? "")).count) Content-Length")
+                    .frame(width: deviceWidth - 55, height: 40)
+                }
+                
+                //Use JWT for Requests
+                Button {
+                    useJWT.toggle()
+                } label: {
+                    ConnToggleViewRow(name: "Use JWT for Request", isOn: $useJWT)
+                        .frame(width: deviceWidth - 35, height: 40)
                 }
                 Button {
-                    print("Make request for data (below):")
-                    print(requestData.description)
-                    print("HeaderRows: ")
-                    let isPreview = ProcessInfo.processInfo.environment["PREVIEW"] != nil && ProcessInfo.processInfo.environment["PREVIEW"] == "1"
-                    print("Made request for Preview: \(isPreview)")
-                    print("HeaderRows:")
-                    for row in headerRows {
-                        print("\t\"\(row.key)\": \"\(row.value)\"")
-                    }
-                    print("bodyString: \(bodyString)")
+                    useBase64.toggle()
+                } label: {
+                    ConnToggleViewRow(name: "Decode Base64 Response", isOn: $useBase64)
+                        .frame(width: deviceWidth - 35, height: 40)
+                }
+                Button {
+//                    let isPreview = ProcessInfo.processInfo.environment["PREVIEW"] != nil && ProcessInfo.processInfo.environment["PREVIEW"] == "1"
+                    
                     //Attempt to add HeaderData to SwiftData and save that
                     if requestData.headerData.headerRows.count != headerRows.count {
                         requestData.headerData.headerRows = headerRows
@@ -192,7 +144,9 @@ struct SetupConnectionView: View {
                     if requestData.method != requestMethodType {
                         requestData.method = requestMethodType
                     }
+                    #if !RELEASE
                     print("Attempted to save for Row named \(requestData.name) and URL \(requestData.url)")
+                    #endif
                     
                     let requester = Requester()
                     let headerDict = requester.convertHeaderDataToDictionary(headerData: requestData.headerData)
@@ -220,12 +174,14 @@ struct SetupConnectionView: View {
                             }
                         }
                         requestResponsePopover = true
+                        #if !RELEASE
                         print("Request completed with response \(bodyString)")
+                        #endif
                     }
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 20)
-                            .frame(width: deviceWidth - 120, height: 40)
+                            .frame(width: deviceWidth - 55, height: 40)
                             .foregroundStyle(defaultSystemGray)
                             .padding(.vertical, 10)
                         Text("Make Request")
@@ -238,12 +194,19 @@ struct SetupConnectionView: View {
                 }
                 //TODO: Create "View Last Request" button if there is a previous request stored in RequestData
             }
+            Button {
+                print("Attempted to view cached response!")
+            } label: {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 20)
+                        .frame(width: deviceWidth - 55, height: 40)
+                        .foregroundStyle(defaultSystemGray)
+                    Text("View Cached Response")
+                }
+            }
         }
     }
     
-    func deleteRow(at offsets:IndexSet) {
-        self.headerRows.remove(atOffsets: offsets)
-    }
     
     func saveData() {
         do {
@@ -258,10 +221,16 @@ struct SetupConnectionView: View {
 struct SetupConnectionView_Preview: PreviewProvider {
     static let deviceWidth:CGFloat = UIScreen.main.bounds.width
     static let deviceHeight:CGFloat = UIScreen.main.bounds.height
+    @State static var navPath = [Int]()
+    @State static var rData:RequestData = RequestData(url: "https://192.168.15.68:20080/trazadone",
+                                               method: .GET,
+                                               name: "Test00")
     
     static var previews: some View {
-        SetupConnectionView(requestData: RequestData(url: "https://192.168.15.68:20080/trazadone", method: .GET, name: "Test00"),
+        SetupConnectionView(requestData: rData,
                             deviceWidth: deviceWidth,
-                            deviceHeight: deviceHeight)
+                            deviceHeight: deviceHeight,
+                            responseBodyData: $rData.bodyData,
+                            navPath: $navPath)
     }
 }
