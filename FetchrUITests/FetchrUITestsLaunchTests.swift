@@ -1,13 +1,13 @@
 //
-//  REST_RequesterUITestsLaunchTests.swift
-//  REST RequesterUITests
+//  FetchrUITestsLaunchTests.swift
+//  FetchrUITests
 //
-//  Created by Austin Bennett on 6/21/24.
+//  Created by Austin Bennett on 8/14/24.
 //
 
 import XCTest
 
-final class REST_RequesterUITestsLaunchTests: XCTestCase {
+final class FetchrUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
@@ -17,7 +17,6 @@ final class REST_RequesterUITestsLaunchTests: XCTestCase {
         continueAfterFailure = false
     }
 
-    @MainActor
     func testLaunch() throws {
         let app = XCUIApplication()
         app.launch()
