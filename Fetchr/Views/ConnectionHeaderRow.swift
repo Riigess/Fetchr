@@ -160,6 +160,26 @@ struct ConnectionHeaderRow: View {
     }
 }
 
+enum ConnectionHeaderRowPreviewDevices:String, CaseIterable {
+    //Devices Supported: A14 & newer
+    //All supported device screen sizes for my app
+    case iPhone16ProMax = "iPhone 16 Pro Max"               //6.9-inch
+    case iPhone16Pro = "iPhone 16 Pro"                      //6.3-inch
+    case iPhone16Plus = "iPhone 16 Plus"                    //6.7-inch (Same size as the 15 Pro Max)
+    case iPhone16 = "iPhone 16"                             //6.1-inch (same size as the 15 & 15 Pro)
+    case iPhoneSE = "iPhone SE (3rd generation)"            //4.7-inch (same size as the base sizes of the iPhone 7, 8, SE 2nd Gen, etc)
+    case Mac = "My Mac"                                     //Resizable (minimum should be 600x400)
+    case iPadAir = "iPad Air 11-inch (M2)"                  //11-inch, Same size as the A12X -> M2 Pro
+    case iPadPro129 = "iPad Pro 12.9-inch (4th generation)" //12.9-inch, Same size as the A9X -> M2 iPad Pros
+    case iPadPro = "iPad Pro 13-inch (M4)"                  //13-inch, Same size as the larger M2 iPad Air
+    case iPadMini = "iPad mini (6th generation)"            //8.3-inch
+    case iPadBase = "iPad (10th generation)"                //10.9-inch, same size as the 4th & 5th gen iPad Air (A14 & M1)
+    
+    static var allCases: [String] {
+        return ConnectionHeaderRowPreviewDevices.allCases.map { $0.rawValue }
+    }
+}
+
 struct ConnectionHeaderRow_Previews: PreviewProvider {
     @State static var key:String = ""
     @State static var value:String = ""
