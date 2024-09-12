@@ -152,43 +152,6 @@ struct ConnectionHeaderRow: View {
     }
 }
 
-struct RowDesign:View {
-    let width:CGFloat
-    let height:CGFloat
-    
-    var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 20)
-                .frame(width: 80, height: height)
-                .foregroundStyle(Color.orange)
-        }
-    }
-}
-
-struct PartialPillShape:Shape {
-    let roundedCornerRadius:CGFloat
-    
-    func path(in rect:CGRect) -> Path {
-        var path = Path()
-        path.move(to: CGPoint(x: rect.maxX, y: rect.minY)) //Start at the top-right corner
-        path.addLine(to: CGPoint(x: rect.minX + (roundedCornerRadius), y: rect.minY)) //Move to point just before the curve
-        path.addArc(center: CGPoint(x: rect.minX + roundedCornerRadius, y: rect.minY + roundedCornerRadius),
-                    radius: roundedCornerRadius,
-                    startAngle: Angle(degrees: 90),
-                    endAngle: Angle(degrees: 180),
-                    clockwise: true)
-        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY - (roundedCornerRadius)))
-        path.addArc(center: CGPoint(x: rect.minX + (roundedCornerRadius), y: rect.maxY - (roundedCornerRadius)),
-                    radius: roundedCornerRadius,
-                    startAngle: Angle(degrees: 0),
-                    endAngle: Angle(degrees: 90),
-                    clockwise: true)
-        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
-        path.closeSubpath()
-        return path
-    }
-}
-
 enum ConnectionHeaderRowPreviewDevices: String, CaseIterable {
     case iPhone15ProMax = "iPhone 15 Pro Max"
     case Coeus = "Coeus" //My Personal Device
