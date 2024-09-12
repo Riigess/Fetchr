@@ -10,6 +10,7 @@ import SwiftData
 
 struct NavView: View {
     @Environment(\.modelContext) private var modelContext
+    
     @Query private var requestData:[RequestData]
     #if os(iOS)
         let tabNavColor:Color = Color(red: Double(0x30) / 255.0, green: Double(0x3A) / 255.0, blue: Double(0xCB) / 255.0) //Background tab view color
@@ -17,14 +18,22 @@ struct NavView: View {
         let tabNavColor:Color = Color(red: Double(0x44) / 255.0, green: Double(0x48) / 255.0, blue: Double(0x82) / 255.0)
     #endif
     
-    let useThinPlus:Bool = true
     let deviceWidth:CGFloat = UIScreen.main.bounds.width
     let deviceHeight:CGFloat = UIScreen.main.bounds.height
     let grayTabViewColor:Color = Color(red: 240.0 / 255.0, green: 240.0 / 255.0, blue: 240.0 / 255.0)
     
     static let isDarkMode:Bool = UIScreen.main.traitCollection.userInterfaceStyle == .dark
     
-    @State var selection:Int = 0
+    @State var pinnedRequests:[RequestData] = []
+    @State var selectedView:String?
+    @State var searchText:String = ""
+    @State private var showDetail:Bool = false
+    
+    //Technically this build a TreeNode-like experience
+    //  It will start at the -1 index and work its way to 0, if -1 == 0 (length == 1) then it will only show that one view
+    @State private var path = [0]
+    @State private var requestItem:RequestData
+    @State private var bodyString:String
     
     init() {
         #if os(iOS)
@@ -47,72 +56,108 @@ struct NavView: View {
         
         UITabBar.appearance().scrollEdgeAppearance = tabBarColoredAppearance //What happens when there is no content behind it
         UITabBar.appearance().standardAppearance = tabBarColoredAppearance //What happens when there is content behind it
+        
+        self.requestItem = RequestData(url: "http://127.0.0.1", method: .GET, name: "NoRow")
+        self.bodyString = ""
     }
     
     var body: some View {
-        if #available(iOS 18.0, tvOS 18.0, watchOS 11.0, macOS 15.0, *) {
-            TabView {
-                Tab("Home", systemImage: "house") {
-                    HomeView(navTitle: "REST Requester")
-                        .modelContext(modelContext)
-                }
-                Tab("Automation", systemImage: "wrench") {
-                    AutomationView()
-                        .modelContext(modelContext)
-                }
-                Tab("Settings", systemImage: "gear") {
-                    SettingsView()
-                        .modelContext(modelContext)
-                }
-                #if os(tvOS)
-                Tab {
-                    SetupConnectionView()
+        NavigationStack(path: $path) {
+            VStack(spacing: 40) {
+                Text("")
+                    .frame(height: 5)
+                Button {
+                    path = [0]
+                    print("Selected path \(path)")
                 } label: {
-                    Image(systemName: "square.and.pencil")
+                    NavViewRow(name: "Home", refText: "\(requestData.count > 0 ? requestData.count : 200) rows")
                 }
-                #endif
+                .frame(width: deviceWidth - 80, height: 40)
+                .padding(.bottom, 10)
+                Button {
+                    path = [1]
+                } label: {
+                    NavViewRow(name: "Automation", refText: "")
+                }
+                .frame(width: deviceWidth - 80, height: 40)
+                Button{
+                    path = [2]
+                } label: {
+                    NavViewRow(name: "Settings", refText: "")
+                }
+                .frame(width: deviceWidth - 80, height: 40)
+                Spacer()
             }
-            #if DEBUG
-            .task {
-                print("iOS 18.0")
-            }
-            #endif
-            .tint(.white)
-        }
-        else if #available(iOS 17.0, tvOS 17.0, watchOS 10.0, macOS 14.0, *) {
-            NavigationView {
-                TabView(selection: $selection) {
-                    HomeView(navTitle: "REST Requester")
-                        .tabItem {
-                            Label("Home", systemImage: "house")
-                        }
-                        .tag(0)
+            .navigationBarBackButtonHidden(true)
+            .navigationTitle("Fetchr")
+            .navigationDestination(for: Int.self) { selection in
+                if selection == 0 {
+                    HomeView(navTitle: "Fetchr",
+                             searchText: $searchText,
+                             requestData: $requestItem,
+                             navPath: $path)
+                    .modelContext(modelContext)
+                } else if selection == 1 {
                     AutomationView()
-                        .tabItem {
-                            Label("Automation", systemImage: "wrench")
-                        }
-                        .tag(1)
+                        .modelContext(modelContext)
+                } else if selection == 2 {
                     SettingsView()
-                        .tabItem {
-                            Label("Settings", systemImage: "gear")
+                        .modelContext(modelContext)
+                        .navigationBarBackButtonHidden(true)
+                } else if selection == 3 {
+                    SetupConnectionView(requestData: requestItem,
+                                        deviceWidth: deviceWidth,
+                                        deviceHeight: deviceHeight,
+                                        responseBodyData: $requestItem.bodyData,
+                                        navPath: $path)
+                    .modelContext(modelContext)
+                    .toolbar {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Button {
+                                //TODO: Create a way to save data to RequestData if that's not done atomically
+                                print("Save button tapped!")
+                            } label: {
+                                Text("Save")
+                                    .foregroundStyle(Color.white)
+                            }
                         }
-                        .tag(2)
-                    #if os(tvOS)
-                    SetupConnectionView()
-                        .tabItem {
-                            Label("New", systemImage: "square.and.pencil")
+                    }
+                } else if selection == 4 {
+                    ConnectionHeaderDataView(deviceWidth: deviceWidth,
+                                             deviceHeight: deviceHeight,
+                                             sectionBreak: 15.0,
+                                             headerRows: $requestItem.headerData.headerRows)
+                    .toolbar {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Button {
+                                requestItem.headerData.headerRows.append(HeaderRow(key: "", value: ""))
+                            } label: {
+                                Image(systemName: "plus")
+                                    .foregroundStyle(Color.white)
+                            }
                         }
-                    #endif
-                }
-                #if DEBUG
-                .task {
-                    print("iOS 17.X")
-                }
-                #endif
-                .tint(.white)
-                .onAppear {
-                    UITabBar.appearance().unselectedItemTintColor = .white
-                    print("Appeared")
+                        //I wonder if this will override the default "Back" button placement.. Hm..
+                    }
+                } else if selection == 5 {
+                    ConnectionBodyDataView(deviceWidth: deviceWidth,
+                                           deviceHeight: deviceHeight,
+                                           sectionBreak: 15.0,
+                                           textFieldBorderColor: .black,
+                                           bodyString: $bodyString)
+                    .navigationBarBackButtonHidden(true)
+                    .navigationTitle("Body Data")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItem(placement: .topBarLeading) {
+                            Button {
+                                path.remove(at: path.count - 1)
+                            } label: {
+                                Image(systemName: "chevron.left")
+                                Text("Back")
+                            }
+                            .foregroundStyle(Color.white)
+                        }
+                    }
                 }
             }
         }

@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct ConnectionHeaderRow: View {
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.modelContext) private var modelContext
     var headerRow:HeaderRow
     
@@ -56,26 +57,29 @@ struct ConnectionHeaderRow: View {
                 }
                 .offset(x: 10)
                 ZStack {
-                    PartialPillShape(roundedCornerRadius: 20)
-                        .rotationEffect(Angle(degrees: 180))
+                    GeometryReader { geom in
+                        //Background
+                        PartialPillShape(roundedCornerRadius: 22)
+                            .rotationEffect(Angle(degrees: 180))
+                            .foregroundStyle(colorScheme == .light ? Color.black : Color.white)
+                        //Foreground (behind CustomTextFields)
+                        PartialPillShape(roundedCornerRadius: 20)
+                            .rotationEffect(Angle(degrees: 180))
+                            .foregroundStyle(colorScheme == .light ? Color.white : Color.black)
+                            .frame(width: geom.size.width - 2, height: geom.size.height - 4)
+                            .offset(x: 0, y: 2)
+                    }
                     VStack(spacing: 12) {
-                        TextField("Key", text: $headerKey)
+                        CustomTextField(label: "Key", text: $headerKey, cornerRadius: 8)
                             .padding(.leading, 10)
-                            .background {
-                                RoundedRectangle(cornerRadius: 32.0 / 3.0)
-                                    .foregroundStyle(Color(UIColor.systemGray4))
-                            }
                             .submitLabel(.next)
                             .onSubmit {
                                 valueHeaderIsFocused = true
                             }
-                        TextField("Value", text: $headerValue)
+                        CustomTextField(label: "Value", text: $headerValue, cornerRadius: 8)
                             .padding(.leading, 10)
                             .focused($valueHeaderIsFocused)
-                            .background {
-                                RoundedRectangle(cornerRadius: 32.0 / 3.0)
-                                    .foregroundStyle(Color(UIColor.systemGray4))
-                            }
+//                            .frame(width: self.deviceWidth - 90, height: 26)
                             .submitLabel(SubmitLabel.done)
                             .onSubmit {
                                 valueHeaderIsFocused = false
@@ -88,8 +92,12 @@ struct ConnectionHeaderRow: View {
                                 attemptSaveData()
                                 print("Attempted to save for row named \(headerRow.key)")
                             }
+                            .onTapGesture {
+                                print("Tapped! CustomTextField with label \"\(self.headerValue)\"")
+                            }
                     }
-                    .frame(width: deviceWidth - 100)
+                    .frame(width: deviceWidth - 90, height: 52 + 10)
+                    .offset(x: -12)
                 }
             }
             .frame(height: 80)
@@ -152,11 +160,20 @@ struct ConnectionHeaderRow: View {
     }
 }
 
-enum ConnectionHeaderRowPreviewDevices: String, CaseIterable {
-    case iPhone15ProMax = "iPhone 15 Pro Max"
-    case Coeus = "Coeus" //My Personal Device
-    case iPhone15Pro = "iPhone 15 Pro"
-    case iPhone15 = "iPhone 15"
+enum ConnectionHeaderRowPreviewDevices:String, CaseIterable {
+    //Devices Supported: A14 & newer
+    //All supported device screen sizes for my app
+    case iPhone16ProMax = "iPhone 16 Pro Max"               //6.9-inch
+    case iPhone16Pro = "iPhone 16 Pro"                      //6.3-inch
+    case iPhone16Plus = "iPhone 16 Plus"                    //6.7-inch (Same size as the 15 Pro Max)
+    case iPhone16 = "iPhone 16"                             //6.1-inch (same size as the 15 & 15 Pro)
+    case iPhoneSE = "iPhone SE (3rd generation)"            //4.7-inch (same size as the base sizes of the iPhone 7, 8, SE 2nd Gen, etc)
+    case Mac = "My Mac"                                     //Resizable (minimum should be 600x400)
+    case iPadAir = "iPad Air 11-inch (M2)"                  //11-inch, Same size as the A12X -> M2 Pro
+    case iPadPro129 = "iPad Pro 12.9-inch (4th generation)" //12.9-inch, Same size as the A9X -> M2 iPad Pros
+    case iPadPro = "iPad Pro 13-inch (M4)"                  //13-inch, Same size as the larger M2 iPad Air
+    case iPadMini = "iPad mini (6th generation)"            //8.3-inch
+    case iPadBase = "iPad (10th generation)"                //10.9-inch, same size as the 4th & 5th gen iPad Air (A14 & M1)
     
     static var allCases: [String] {
         return ConnectionHeaderRowPreviewDevices.allCases.map { $0.rawValue }
@@ -191,26 +208,17 @@ struct ConnectionHeaderRow_Previews: PreviewProvider {
                                         deviceHeight: deviceHeight,
                                         headerRows: headerRows)
                 }
-                HStack(spacing: 0) {
-                    ZStack {
-                        PartialPillShape(roundedCornerRadius: 16)
-                            .frame(width: 40)
-                            .foregroundStyle(Color.orange)
-                        Text("Header")
-                            .rotationEffect(Angle(degrees: 90))
-                            .foregroundStyle(Color(UIColor.systemGray6))
-                    }
-                    ZStack {
-                        PartialPillShape(roundedCornerRadius: 16)
-                            .frame(width: 300)
-                            .rotationEffect(Angle(degrees: 180))
-                            .offset(x: -10)
-                        VStack {
-                            
-                        }
-                    }
-                }.frame(height: 80)
-                    .offset(x: 10)
+                ZStack {
+                    Rectangle()
+                        .frame(width: deviceWidth, height: 120)
+                        .foregroundStyle(Color.black)
+                    ConnectionHeaderRow(headerRow: HeaderRow(key: "Sample Header Text",
+                                                             value: "Example Value Text"),
+                                        deviceWidth: deviceWidth,
+                                        deviceHeight: deviceHeight,
+                                        headerRows: headerRows)
+                    .colorScheme(ColorScheme.dark)
+                }
             }
             .previewDevice(PreviewDevice(rawValue: device))
             .previewDisplayName(device)

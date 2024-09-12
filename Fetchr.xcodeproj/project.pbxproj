@@ -10,14 +10,6 @@
 		D351CD0E2C2606AC004F44CF /* FetchrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351CD0D2C2606AC004F44CF /* FetchrTests.swift */; };
 		D351CD182C2606AC004F44CF /* FetchrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351CD172C2606AC004F44CF /* FetchrUITests.swift */; };
 		D351CD1A2C2606AC004F44CF /* FetchrUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351CD192C2606AC004F44CF /* FetchrUITestsLaunchTests.swift */; };
-		D3673A972C31140A00EA6A8B /* FetchrWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3673A962C31140A00EA6A8B /* FetchrWatchApp.swift */; };
-		D3673A992C31140A00EA6A8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3673A982C31140A00EA6A8B /* ContentView.swift */; };
-		D3673A9B2C31140B00EA6A8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3673A9A2C31140B00EA6A8B /* Assets.xcassets */; };
-		D3673A9E2C31140B00EA6A8B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3673A9D2C31140B00EA6A8B /* Preview Assets.xcassets */; };
-		D3673AA82C31140B00EA6A8B /* Fetchr_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3673AA72C31140B00EA6A8B /* Fetchr_Watch_AppTests.swift */; };
-		D3673AB22C31140B00EA6A8B /* Fetchr_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3673AB12C31140B00EA6A8B /* Fetchr_Watch_AppUITests.swift */; };
-		D3673AB42C31140B00EA6A8B /* Fetchr_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3673AB32C31140B00EA6A8B /* Fetchr_Watch_AppUITestsLaunchTests.swift */; };
-		D3673AB72C31140B00EA6A8B /* Fetchr Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D3673A942C31140A00EA6A8B /* Fetchr Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D38D43EB2C409C6500BB84E4 /* OSVersionCompatibilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D43EA2C409C6000BB84E4 /* OSVersionCompatibilities.swift */; };
 		D38D43ED2C409C7900BB84E4 /* OSVersionBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D43EC2C409C7500BB84E4 /* OSVersionBounds.swift */; };
 		D38D43EF2C409CBE00BB84E4 /* AssetReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D43EE2C409CBB00BB84E4 /* AssetReceipt.swift */; };
@@ -25,24 +17,32 @@
 		D38D43F32C40A1BD00BB84E4 /* AssetVersionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D43F22C40A1BA00BB84E4 /* AssetVersionInfo.swift */; };
 		D38D43F52C40A1D200BB84E4 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D43F42C40A1D000BB84E4 /* Asset.swift */; };
 		D38D43F72C40A1E500BB84E4 /* PallasResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D43F62C40A1E200BB84E4 /* PallasResponse.swift */; };
-		D3A4BCD72C3C875E00916173 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4BCD62C3C875C00916173 /* DeleteButton.swift */; };
 		D3A4BCD92C3CAEB300916173 /* BodySendableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4BCD82C3CAEAF00916173 /* BodySendableType.swift */; };
 		D3AFABE62C4261B700B70D87 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AFABE52C4261B100B70D87 /* SettingsData.swift */; };
 		D3AFABEA2C42632300B70D87 /* LicenseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AFABE92C42632000B70D87 /* LicenseData.swift */; };
-		D3B0B57D2C3B3701002F988E /* TrapezoidShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0B57C2C3B36FB002F988E /* TrapezoidShape.swift */; };
 		D3BE2EC52C3F794B00BD76BB /* ResponseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BE2EC42C3F794600BD76BB /* ResponseView.swift */; };
 		D3BE2EC72C3F7EDA00BD76BB /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BE2EC62C3F7ED500BD76BB /* ResponseData.swift */; };
+		D3CC7C122C8FAD60001C8948 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CC7C082C8FAD60001C8948 /* AddButton.swift */; };
+		D3CC7C132C8FAD60001C8948 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CC7C092C8FAD60001C8948 /* CustomTextField.swift */; };
+		D3CC7C142C8FAD60001C8948 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CC7C0A2C8FAD60001C8948 /* DeleteButton.swift */; };
+		D3CC7C152C8FAD60001C8948 /* MenuRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CC7C0B2C8FAD60001C8948 /* MenuRow.swift */; };
+		D3CC7C162C8FAD60001C8948 /* NavViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CC7C0C2C8FAD60001C8948 /* NavViewRow.swift */; };
+		D3CC7C172C8FAD60001C8948 /* PartialPillShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CC7C0D2C8FAD60001C8948 /* PartialPillShape.swift */; };
+		D3CC7C182C8FAD60001C8948 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CC7C0E2C8FAD60001C8948 /* Router.swift */; };
+		D3CC7C192C8FAD60001C8948 /* RowDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CC7C0F2C8FAD60001C8948 /* RowDesign.swift */; };
+		D3CC7C1A2C8FAD60001C8948 /* TrapezoidShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CC7C102C8FAD60001C8948 /* TrapezoidShape.swift */; };
+		D3CC7C1F2C8FAD64001C8948 /* ConnectionBodyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CC7C1B2C8FAD64001C8948 /* ConnectionBodyDataView.swift */; };
+		D3CC7C202C8FAD64001C8948 /* ConnectionHeaderDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CC7C1C2C8FAD64001C8948 /* ConnectionHeaderDataView.swift */; };
+		D3CC7C212C8FAD64001C8948 /* ConnToggleViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CC7C1D2C8FAD64001C8948 /* ConnToggleViewRow.swift */; };
 		D3E57FF02C367DC20089E2F7 /* RequesterMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FDA2C367DC20089E2F7 /* RequesterMethod.swift */; };
 		D3E57FF12C367DC20089E2F7 /* SetupConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FE92C367DC20089E2F7 /* SetupConnectionView.swift */; };
 		D3E57FF22C367DC20089E2F7 /* Requester.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FD92C367DC20089E2F7 /* Requester.swift */; };
-		D3E57FF32C367DC20089E2F7 /* MenuRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FE62C367DC20089E2F7 /* MenuRow.swift */; };
 		D3E57FF42C367DC20089E2F7 /* FetchrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FEE2C367DC20089E2F7 /* FetchrApp.swift */; };
 		D3E57FF52C367DC20089E2F7 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FD82C367DC20089E2F7 /* DateUtil.swift */; };
 		D3E57FF62C367DC20089E2F7 /* HeaderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FDD2C367DC20089E2F7 /* HeaderData.swift */; };
 		D3E57FF72C367DC20089E2F7 /* ConnectionHeaderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FE32C367DC20089E2F7 /* ConnectionHeaderRow.swift */; };
 		D3E57FF82C367DC20089E2F7 /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FE72C367DC20089E2F7 /* NavView.swift */; };
 		D3E57FF92C367DC20089E2F7 /* BodyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FDC2C367DC20089E2F7 /* BodyData.swift */; };
-		D3E57FFA2C367DC20089E2F7 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FE12C367DC20089E2F7 /* AddButton.swift */; };
 		D3E57FFB2C367DC20089E2F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FEC2C367DC20089E2F7 /* ContentView.swift */; };
 		D3E57FFC2C367DC20089E2F7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FE82C367DC20089E2F7 /* SettingsView.swift */; };
 		D3E57FFD2C367DC20089E2F7 /* AutomationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E57FE22C367DC20089E2F7 /* AutomationView.swift */; };
@@ -70,27 +70,6 @@
 			remoteGlobalIDString = D351CCF52C2606AB004F44CF;
 			remoteInfo = "REST Requester";
 		};
-		D3673AA42C31140B00EA6A8B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D351CCEE2C2606AB004F44CF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D3673A932C31140A00EA6A8B;
-			remoteInfo = "Athna Watch App";
-		};
-		D3673AAE2C31140B00EA6A8B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D351CCEE2C2606AB004F44CF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D3673A932C31140A00EA6A8B;
-			remoteInfo = "Athna Watch App";
-		};
-		D3673ADB2C34D63700EA6A8B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D351CCEE2C2606AB004F44CF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D3673A932C31140A00EA6A8B;
-			remoteInfo = "Athna Watch App";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -100,7 +79,6 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				D3673AB72C31140B00EA6A8B /* Fetchr Watch App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,16 +92,6 @@
 		D351CD132C2606AC004F44CF /* FetchrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D351CD172C2606AC004F44CF /* FetchrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchrUITests.swift; sourceTree = "<group>"; };
 		D351CD192C2606AC004F44CF /* FetchrUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchrUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D3673A942C31140A00EA6A8B /* Fetchr Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fetchr Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3673A962C31140A00EA6A8B /* FetchrWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchrWatchApp.swift; sourceTree = "<group>"; };
-		D3673A982C31140A00EA6A8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		D3673A9A2C31140B00EA6A8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D3673A9D2C31140B00EA6A8B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D3673AA32C31140B00EA6A8B /* Fetchr Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fetchr Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3673AA72C31140B00EA6A8B /* Fetchr_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetchr_Watch_AppTests.swift; sourceTree = "<group>"; };
-		D3673AAD2C31140B00EA6A8B /* Fetchr Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fetchr Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3673AB12C31140B00EA6A8B /* Fetchr_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetchr_Watch_AppUITests.swift; sourceTree = "<group>"; };
-		D3673AB32C31140B00EA6A8B /* Fetchr_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetchr_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D38D43EA2C409C6000BB84E4 /* OSVersionCompatibilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSVersionCompatibilities.swift; sourceTree = "<group>"; };
 		D38D43EC2C409C7500BB84E4 /* OSVersionBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSVersionBounds.swift; sourceTree = "<group>"; };
 		D38D43EE2C409CBB00BB84E4 /* AssetReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetReceipt.swift; sourceTree = "<group>"; };
@@ -132,13 +100,23 @@
 		D38D43F42C40A1D000BB84E4 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		D38D43F62C40A1E200BB84E4 /* PallasResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PallasResponse.swift; sourceTree = "<group>"; };
 		D3A4BCD52C3BA65600916173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		D3A4BCD62C3C875C00916173 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
 		D3A4BCD82C3CAEAF00916173 /* BodySendableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodySendableType.swift; sourceTree = "<group>"; };
 		D3AFABE52C4261B100B70D87 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
 		D3AFABE92C42632000B70D87 /* LicenseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseData.swift; sourceTree = "<group>"; };
-		D3B0B57C2C3B36FB002F988E /* TrapezoidShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrapezoidShape.swift; sourceTree = "<group>"; };
 		D3BE2EC42C3F794600BD76BB /* ResponseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseView.swift; sourceTree = "<group>"; };
 		D3BE2EC62C3F7ED500BD76BB /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
+		D3CC7C082C8FAD60001C8948 /* AddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
+		D3CC7C092C8FAD60001C8948 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		D3CC7C0A2C8FAD60001C8948 /* DeleteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
+		D3CC7C0B2C8FAD60001C8948 /* MenuRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuRow.swift; sourceTree = "<group>"; };
+		D3CC7C0C2C8FAD60001C8948 /* NavViewRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavViewRow.swift; sourceTree = "<group>"; };
+		D3CC7C0D2C8FAD60001C8948 /* PartialPillShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartialPillShape.swift; sourceTree = "<group>"; };
+		D3CC7C0E2C8FAD60001C8948 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		D3CC7C0F2C8FAD60001C8948 /* RowDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowDesign.swift; sourceTree = "<group>"; };
+		D3CC7C102C8FAD60001C8948 /* TrapezoidShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrapezoidShape.swift; sourceTree = "<group>"; };
+		D3CC7C1B2C8FAD64001C8948 /* ConnectionBodyDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionBodyDataView.swift; sourceTree = "<group>"; };
+		D3CC7C1C2C8FAD64001C8948 /* ConnectionHeaderDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionHeaderDataView.swift; sourceTree = "<group>"; };
+		D3CC7C1D2C8FAD64001C8948 /* ConnToggleViewRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnToggleViewRow.swift; sourceTree = "<group>"; };
 		D3E57FD42C367DC20089E2F7 /* RequesterErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequesterErrors.swift; sourceTree = "<group>"; };
 		D3E57FD62C367DC20089E2F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D3E57FD82C367DC20089E2F7 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
@@ -148,12 +126,10 @@
 		D3E57FDD2C367DC20089E2F7 /* HeaderData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderData.swift; sourceTree = "<group>"; };
 		D3E57FDE2C367DC20089E2F7 /* HeaderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderRow.swift; sourceTree = "<group>"; };
 		D3E57FDF2C367DC20089E2F7 /* RequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
-		D3E57FE12C367DC20089E2F7 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		D3E57FE22C367DC20089E2F7 /* AutomationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationView.swift; sourceTree = "<group>"; };
 		D3E57FE32C367DC20089E2F7 /* ConnectionHeaderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionHeaderRow.swift; sourceTree = "<group>"; };
 		D3E57FE42C367DC20089E2F7 /* HeaderRowData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderRowData.swift; sourceTree = "<group>"; };
 		D3E57FE52C367DC20089E2F7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		D3E57FE62C367DC20089E2F7 /* MenuRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRow.swift; sourceTree = "<group>"; };
 		D3E57FE72C367DC20089E2F7 /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
 		D3E57FE82C367DC20089E2F7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D3E57FE92C367DC20089E2F7 /* SetupConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupConnectionView.swift; sourceTree = "<group>"; };
@@ -186,27 +162,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D3673A912C31140A00EA6A8B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D3673AA02C31140B00EA6A8B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D3673AAA2C31140B00EA6A8B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -217,9 +172,6 @@
 				D3E57FEF2C367DC20089E2F7 /* Fetchr */,
 				D351CD0C2C2606AC004F44CF /* FetchrTests */,
 				D351CD162C2606AC004F44CF /* FetchrUITests */,
-				D3673A952C31140A00EA6A8B /* Fetchr Watch App */,
-				D3673AA62C31140B00EA6A8B /* Fetchr Watch AppTests */,
-				D3673AB02C31140B00EA6A8B /* Fetchr Watch AppUITests */,
 				D351CCF72C2606AB004F44CF /* Products */,
 				D3673ADA2C34D63500EA6A8B /* Frameworks */,
 			);
@@ -231,9 +183,6 @@
 				D351CCF62C2606AB004F44CF /* Fetchr.app */,
 				D351CD092C2606AC004F44CF /* FetchrTests.xctest */,
 				D351CD132C2606AC004F44CF /* FetchrUITests.xctest */,
-				D3673A942C31140A00EA6A8B /* Fetchr Watch App.app */,
-				D3673AA32C31140B00EA6A8B /* Fetchr Watch AppTests.xctest */,
-				D3673AAD2C31140B00EA6A8B /* Fetchr Watch AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -253,42 +202,6 @@
 				D351CD192C2606AC004F44CF /* FetchrUITestsLaunchTests.swift */,
 			);
 			path = FetchrUITests;
-			sourceTree = "<group>";
-		};
-		D3673A952C31140A00EA6A8B /* Fetchr Watch App */ = {
-			isa = PBXGroup;
-			children = (
-				D3673A962C31140A00EA6A8B /* FetchrWatchApp.swift */,
-				D3673A982C31140A00EA6A8B /* ContentView.swift */,
-				D3673A9A2C31140B00EA6A8B /* Assets.xcassets */,
-				D3673A9C2C31140B00EA6A8B /* Preview Content */,
-			);
-			path = "Fetchr Watch App";
-			sourceTree = "<group>";
-		};
-		D3673A9C2C31140B00EA6A8B /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				D3673A9D2C31140B00EA6A8B /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		D3673AA62C31140B00EA6A8B /* Fetchr Watch AppTests */ = {
-			isa = PBXGroup;
-			children = (
-				D3673AA72C31140B00EA6A8B /* Fetchr_Watch_AppTests.swift */,
-			);
-			path = "Fetchr Watch AppTests";
-			sourceTree = "<group>";
-		};
-		D3673AB02C31140B00EA6A8B /* Fetchr Watch AppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				D3673AB12C31140B00EA6A8B /* Fetchr_Watch_AppUITests.swift */,
-				D3673AB32C31140B00EA6A8B /* Fetchr_Watch_AppUITestsLaunchTests.swift */,
-			);
-			path = "Fetchr Watch AppUITests";
 			sourceTree = "<group>";
 		};
 		D3673ADA2C34D63500EA6A8B /* Frameworks */ = {
@@ -341,6 +254,32 @@
 			path = PopoverViews;
 			sourceTree = "<group>";
 		};
+		D3CC7C112C8FAD60001C8948 /* View Components */ = {
+			isa = PBXGroup;
+			children = (
+				D3CC7C082C8FAD60001C8948 /* AddButton.swift */,
+				D3CC7C092C8FAD60001C8948 /* CustomTextField.swift */,
+				D3CC7C0A2C8FAD60001C8948 /* DeleteButton.swift */,
+				D3CC7C0B2C8FAD60001C8948 /* MenuRow.swift */,
+				D3CC7C0C2C8FAD60001C8948 /* NavViewRow.swift */,
+				D3CC7C0D2C8FAD60001C8948 /* PartialPillShape.swift */,
+				D3CC7C0E2C8FAD60001C8948 /* Router.swift */,
+				D3CC7C0F2C8FAD60001C8948 /* RowDesign.swift */,
+				D3CC7C102C8FAD60001C8948 /* TrapezoidShape.swift */,
+			);
+			path = "View Components";
+			sourceTree = "<group>";
+		};
+		D3CC7C1E2C8FAD64001C8948 /* ConnectionView Components */ = {
+			isa = PBXGroup;
+			children = (
+				D3CC7C1B2C8FAD64001C8948 /* ConnectionBodyDataView.swift */,
+				D3CC7C1C2C8FAD64001C8948 /* ConnectionHeaderDataView.swift */,
+				D3CC7C1D2C8FAD64001C8948 /* ConnToggleViewRow.swift */,
+			);
+			path = "ConnectionView Components";
+			sourceTree = "<group>";
+		};
 		D3E57FD52C367DC20089E2F7 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,15 +320,13 @@
 		D3E57FEA2C367DC20089E2F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D3CC7C1E2C8FAD64001C8948 /* ConnectionView Components */,
+				D3CC7C112C8FAD60001C8948 /* View Components */,
 				D3BE2EC32C3F793A00BD76BB /* PopoverViews */,
-				D3A4BCD62C3C875C00916173 /* DeleteButton.swift */,
-				D3B0B57C2C3B36FB002F988E /* TrapezoidShape.swift */,
-				D3E57FE12C367DC20089E2F7 /* AddButton.swift */,
 				D3E57FE22C367DC20089E2F7 /* AutomationView.swift */,
 				D3E57FE32C367DC20089E2F7 /* ConnectionHeaderRow.swift */,
 				D3E57FE42C367DC20089E2F7 /* HeaderRowData.swift */,
 				D3E57FE52C367DC20089E2F7 /* HomeView.swift */,
-				D3E57FE62C367DC20089E2F7 /* MenuRow.swift */,
 				D3E57FE72C367DC20089E2F7 /* NavView.swift */,
 				D3E57FE82C367DC20089E2F7 /* SettingsView.swift */,
 				D3E57FE92C367DC20089E2F7 /* SetupConnectionView.swift */,
@@ -429,7 +366,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				D3673ADC2C34D63700EA6A8B /* PBXTargetDependency */,
 			);
 			name = Fetchr;
 			productName = "REST Requester";
@@ -472,59 +408,6 @@
 			productReference = D351CD132C2606AC004F44CF /* FetchrUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		D3673A932C31140A00EA6A8B /* Fetchr Watch App */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D3673AB82C31140B00EA6A8B /* Build configuration list for PBXNativeTarget "Fetchr Watch App" */;
-			buildPhases = (
-				D3673A902C31140A00EA6A8B /* Sources */,
-				D3673A912C31140A00EA6A8B /* Frameworks */,
-				D3673A922C31140A00EA6A8B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Fetchr Watch App";
-			productName = "Athna Watch App";
-			productReference = D3673A942C31140A00EA6A8B /* Fetchr Watch App.app */;
-			productType = "com.apple.product-type.application";
-		};
-		D3673AA22C31140B00EA6A8B /* Fetchr Watch AppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D3673ABC2C31140B00EA6A8B /* Build configuration list for PBXNativeTarget "Fetchr Watch AppTests" */;
-			buildPhases = (
-				D3673A9F2C31140B00EA6A8B /* Sources */,
-				D3673AA02C31140B00EA6A8B /* Frameworks */,
-				D3673AA12C31140B00EA6A8B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D3673AA52C31140B00EA6A8B /* PBXTargetDependency */,
-			);
-			name = "Fetchr Watch AppTests";
-			productName = "Athna Watch AppTests";
-			productReference = D3673AA32C31140B00EA6A8B /* Fetchr Watch AppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		D3673AAC2C31140B00EA6A8B /* Fetchr Watch AppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D3673ABF2C31140B00EA6A8B /* Build configuration list for PBXNativeTarget "Fetchr Watch AppUITests" */;
-			buildPhases = (
-				D3673AA92C31140B00EA6A8B /* Sources */,
-				D3673AAA2C31140B00EA6A8B /* Frameworks */,
-				D3673AAB2C31140B00EA6A8B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D3673AAF2C31140B00EA6A8B /* PBXTargetDependency */,
-			);
-			name = "Fetchr Watch AppUITests";
-			productName = "Athna Watch AppUITests";
-			productReference = D3673AAD2C31140B00EA6A8B /* Fetchr Watch AppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -546,17 +429,6 @@
 						CreatedOnToolsVersion = 16.0;
 						TestTargetID = D351CCF52C2606AB004F44CF;
 					};
-					D3673A932C31140A00EA6A8B = {
-						CreatedOnToolsVersion = 16.0;
-					};
-					D3673AA22C31140B00EA6A8B = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = D3673A932C31140A00EA6A8B;
-					};
-					D3673AAC2C31140B00EA6A8B = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = D3673A932C31140A00EA6A8B;
-					};
 				};
 			};
 			buildConfigurationList = D351CCF12C2606AB004F44CF /* Build configuration list for PBXProject "Fetchr" */;
@@ -575,9 +447,6 @@
 				D351CCF52C2606AB004F44CF /* Fetchr */,
 				D351CD082C2606AC004F44CF /* FetchrTests */,
 				D351CD122C2606AC004F44CF /* FetchrUITests */,
-				D3673A932C31140A00EA6A8B /* Fetchr Watch App */,
-				D3673AA22C31140B00EA6A8B /* Fetchr Watch AppTests */,
-				D3673AAC2C31140B00EA6A8B /* Fetchr Watch AppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -606,29 +475,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D3673A922C31140A00EA6A8B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D3673A9E2C31140B00EA6A8B /* Preview Assets.xcassets in Resources */,
-				D3673A9B2C31140B00EA6A8B /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D3673AA12C31140B00EA6A8B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D3673AAB2C31140B00EA6A8B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -638,10 +484,10 @@
 			files = (
 				D38D43F72C40A1E500BB84E4 /* PallasResponse.swift in Sources */,
 				D3E57FF02C367DC20089E2F7 /* RequesterMethod.swift in Sources */,
+				D3CC7C212C8FAD64001C8948 /* ConnToggleViewRow.swift in Sources */,
 				D3A4BCD92C3CAEB300916173 /* BodySendableType.swift in Sources */,
 				D3E57FF12C367DC20089E2F7 /* SetupConnectionView.swift in Sources */,
 				D3E57FF22C367DC20089E2F7 /* Requester.swift in Sources */,
-				D3E57FF32C367DC20089E2F7 /* MenuRow.swift in Sources */,
 				D3E57FF42C367DC20089E2F7 /* FetchrApp.swift in Sources */,
 				D38D43F32C40A1BD00BB84E4 /* AssetVersionInfo.swift in Sources */,
 				D3E57FF52C367DC20089E2F7 /* DateUtil.swift in Sources */,
@@ -650,22 +496,30 @@
 				D3E57FF82C367DC20089E2F7 /* NavView.swift in Sources */,
 				D3E57FF92C367DC20089E2F7 /* BodyData.swift in Sources */,
 				D38D43F52C40A1D200BB84E4 /* Asset.swift in Sources */,
+				D3CC7C152C8FAD60001C8948 /* MenuRow.swift in Sources */,
+				D3CC7C132C8FAD60001C8948 /* CustomTextField.swift in Sources */,
 				D38D43EB2C409C6500BB84E4 /* OSVersionCompatibilities.swift in Sources */,
-				D3B0B57D2C3B3701002F988E /* TrapezoidShape.swift in Sources */,
-				D3A4BCD72C3C875E00916173 /* DeleteButton.swift in Sources */,
-				D3E57FFA2C367DC20089E2F7 /* AddButton.swift in Sources */,
+				D3CC7C162C8FAD60001C8948 /* NavViewRow.swift in Sources */,
+				D3CC7C192C8FAD60001C8948 /* RowDesign.swift in Sources */,
+				D3CC7C1A2C8FAD60001C8948 /* TrapezoidShape.swift in Sources */,
 				D3E57FFB2C367DC20089E2F7 /* ContentView.swift in Sources */,
 				D3E57FFC2C367DC20089E2F7 /* SettingsView.swift in Sources */,
 				D3AFABEA2C42632300B70D87 /* LicenseData.swift in Sources */,
 				D3E57FFD2C367DC20089E2F7 /* AutomationView.swift in Sources */,
 				D3E57FFE2C367DC20089E2F7 /* HeaderRowData.swift in Sources */,
 				D3E57FFF2C367DC20089E2F7 /* RequesterErrors.swift in Sources */,
+				D3CC7C1F2C8FAD64001C8948 /* ConnectionBodyDataView.swift in Sources */,
 				D3E580002C367DC20089E2F7 /* HeaderRow.swift in Sources */,
 				D3AFABE62C4261B700B70D87 /* SettingsData.swift in Sources */,
 				D38D43ED2C409C7900BB84E4 /* OSVersionBounds.swift in Sources */,
 				D3E580012C367DC20089E2F7 /* RequestData.swift in Sources */,
+				D3CC7C172C8FAD60001C8948 /* PartialPillShape.swift in Sources */,
+				D3CC7C202C8FAD64001C8948 /* ConnectionHeaderDataView.swift in Sources */,
+				D3CC7C182C8FAD60001C8948 /* Router.swift in Sources */,
 				D38D43EF2C409CBE00BB84E4 /* AssetReceipt.swift in Sources */,
+				D3CC7C122C8FAD60001C8948 /* AddButton.swift in Sources */,
 				D3BE2EC52C3F794B00BD76BB /* ResponseView.swift in Sources */,
+				D3CC7C142C8FAD60001C8948 /* DeleteButton.swift in Sources */,
 				D3BE2EC72C3F7EDA00BD76BB /* ResponseData.swift in Sources */,
 				D38D43F12C409E2E00BB84E4 /* Transformations.swift in Sources */,
 				D3E580022C367DC20089E2F7 /* HomeView.swift in Sources */,
@@ -689,32 +543,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D3673A902C31140A00EA6A8B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D3673A992C31140A00EA6A8B /* ContentView.swift in Sources */,
-				D3673A972C31140A00EA6A8B /* FetchrWatchApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D3673A9F2C31140B00EA6A8B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D3673AA82C31140B00EA6A8B /* Fetchr_Watch_AppTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D3673AA92C31140B00EA6A8B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D3673AB22C31140B00EA6A8B /* Fetchr_Watch_AppUITests.swift in Sources */,
-				D3673AB42C31140B00EA6A8B /* Fetchr_Watch_AppUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -727,21 +555,6 @@
 			isa = PBXTargetDependency;
 			target = D351CCF52C2606AB004F44CF /* Fetchr */;
 			targetProxy = D351CD142C2606AC004F44CF /* PBXContainerItemProxy */;
-		};
-		D3673AA52C31140B00EA6A8B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D3673A932C31140A00EA6A8B /* Fetchr Watch App */;
-			targetProxy = D3673AA42C31140B00EA6A8B /* PBXContainerItemProxy */;
-		};
-		D3673AAF2C31140B00EA6A8B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D3673A932C31140A00EA6A8B /* Fetchr Watch App */;
-			targetProxy = D3673AAE2C31140B00EA6A8B /* PBXContainerItemProxy */;
-		};
-		D3673ADC2C34D63700EA6A8B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D3673A932C31140A00EA6A8B /* Fetchr Watch App */;
-			targetProxy = D3673ADB2C34D63700EA6A8B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -896,11 +709,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,3";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 17.0;
 				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -942,11 +755,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,3";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 17.0;
 				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -1042,147 +855,6 @@
 			};
 			name = Release;
 		};
-		D3673AB92C31140B00EA6A8B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Fetchr Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = WZ7Q6J2VP9;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Fetchr;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.riigess.fetchr;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.riigess.fetchr.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 11.0;
-			};
-			name = Debug;
-		};
-		D3673ABA2C31140B00EA6A8B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Fetchr Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = WZ7Q6J2VP9;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Fetchr;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.riigess.fetchr;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.riigess.fetchr.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 11.0;
-			};
-			name = Release;
-		};
-		D3673ABD2C31140B00EA6A8B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WZ7Q6J2VP9;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.riigess.Fetchr-Watch-AppTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fetchr Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fetchr Watch App";
-				WATCHOS_DEPLOYMENT_TARGET = 11.0;
-			};
-			name = Debug;
-		};
-		D3673ABE2C31140B00EA6A8B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WZ7Q6J2VP9;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.riigess.Fetchr-Watch-AppTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fetchr Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fetchr Watch App";
-				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 11.0;
-			};
-			name = Release;
-		};
-		D3673AC02C31140B00EA6A8B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WZ7Q6J2VP9;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.riigess.Fetchr-Watch-AppUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				TEST_TARGET_NAME = "Fetchr Watch App";
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
-			};
-			name = Debug;
-		};
-		D3673AC12C31140B00EA6A8B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WZ7Q6J2VP9;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.riigess.Fetchr-Watch-AppUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				TEST_TARGET_NAME = "Fetchr Watch App";
-				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1218,33 +890,6 @@
 			buildConfigurations = (
 				D351CD242C2606AC004F44CF /* Debug */,
 				D351CD252C2606AC004F44CF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D3673AB82C31140B00EA6A8B /* Build configuration list for PBXNativeTarget "Fetchr Watch App" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D3673AB92C31140B00EA6A8B /* Debug */,
-				D3673ABA2C31140B00EA6A8B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D3673ABC2C31140B00EA6A8B /* Build configuration list for PBXNativeTarget "Fetchr Watch AppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D3673ABD2C31140B00EA6A8B /* Debug */,
-				D3673ABE2C31140B00EA6A8B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D3673ABF2C31140B00EA6A8B /* Build configuration list for PBXNativeTarget "Fetchr Watch AppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D3673AC02C31140B00EA6A8B /* Debug */,
-				D3673AC12C31140B00EA6A8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

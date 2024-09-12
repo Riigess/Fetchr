@@ -9,52 +9,73 @@ import SwiftUI
 import SwiftData
 
 struct HomeView: View {
+    @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \RequestData.name) private var searchResults: [RequestData]
-    
-    var navTitle:String
     
     let deviceWidth:CGFloat = UIScreen.main.bounds.width
     let deviceHeight:CGFloat = UIScreen.main.bounds.height
     let useThinPlus:Bool = true
     
     @State private var showingDetail = false
-    @State private var searchText = ""
+    @Binding var searchText:String
+    @Binding var reqData:RequestData
+    @Binding var navPath:[Int]
     
-    init(navTitle:String) {
-        self.navTitle = navTitle
+    init(navTitle:String, searchText:Binding<String>, requestData:Binding<RequestData>, navPath:Binding<[Int]>) {
+        self._searchText = searchText
+        self._reqData = requestData
+        self._navPath = navPath
     }
     
     var body: some View {
         ZStack {
-            NavigationView {
-                ScrollView {
-                    Text("").frame(height: 5)
-                    ForEach(searchResults, id: \.name) { row in
-                        NavigationLink {
-                            SetupConnectionView(requestData: row,
-                                                deviceWidth: self.deviceWidth,
-                                                deviceHeight: self.deviceHeight)
-                                .modelContext(modelContext)
-                        } label: {
-                            #if os(tvOS)
-                                MenuRow(requestType: row.method,
-                                        name: row.name,
-                                        hasData: false,
-                                        url: row.url,
-                                        rowWidth: 1600)
-                                    .frame(width: 1600)
-                            #elseif os(iOS)
-                                MenuRow(requestType: row.method,
-                                        name: row.name,
-                                        hasData: false,
-                                        url: row.url,
-                                        rowWidth: deviceWidth)
-                            #endif
-                        }
-                    }.navigationTitle(navTitle)
+            ScrollView {
+                Text("").frame(height: 5)
+                ForEach(searchResults, id: \.name) { row in
+                    Button {
+                        self.reqData = row
+                        self.navPath.append(3)
+                    } label: {
+#if os(tvOS)
+                        MenuRow(requestType: row.method,
+                                name: row.name,
+                                hasData: false,
+                                url: row.url,
+                                rowWidth: 1600)
+                        .frame(width: 1600)
+#elseif os(iOS)
+                        MenuRow(requestType: row.method,
+                                name: row.name,
+                                hasData: false,
+                                url: row.url,
+                                rowWidth: deviceWidth)
+#endif
+                    }
                 }
             }
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "sidebar.left")
+                            .foregroundStyle(Color.white)
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        self.reqData = RequestData(url: "", method: .GET, name: "")
+                        self.navPath.append(3)
+                    } label: {
+                        Image(systemName: "square.and.pencil")
+                            .foregroundStyle(Color.white)
+                    }
+                }
+            }
+            .navigationBarBackButtonHidden(true)
+            .navigationTitle("Fetchr")
+            .navigationBarTitleDisplayMode(.inline)
             .searchable(text: $searchText, prompt: "Row Name")
             .onKeyPress { keypress in
                 if keypress.phase == .up {
@@ -65,37 +86,15 @@ struct HomeView: View {
             .task {
                 print("SearchResults: \(searchResults.description)")
             }
-            //Do not leave the Add button in the bottom-right of the screen on tvOS/macOS/visionOS
-            #if os(iOS)
-                Button {
-                    showingDetail = true
-                } label: {
-                    //Gets +10 size for each device screen size increase
-                    AddButton(size: 70 + ((deviceWidth - 393.0) * 0.27),
-                              //Gets +2 thickness for each size increase
-                              thickness: 5.0 - (useThinPlus ? 2.0 : 0.0) + ((deviceWidth - 393.0) * 0.054))
-                }
-                //Offset to put button in the bottom-right of the screen from center of display
-                .offset(x: (deviceWidth / 2) - 60,
-                        y: (deviceHeight / 2) - 160)
-                //View-ception
-                .sheet(isPresented: $showingDetail) {
-                    ViewThatFits {
-                        NavigationView {
-                            SetupConnectionView(requestData: RequestData(url: "", method: .GET, name: ""),
-                                                deviceWidth: self.deviceWidth,
-                                                deviceHeight: self.deviceHeight)
-                                .navigationTitle("New Request")
-                        }
-                    }
-                }
-            #endif
         }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
+    @State static var searchText:String = ""
+    @State static var rData:RequestData = RequestData()
+    @State static var navPath = [0]
     static var previews: some View {
-        HomeView(navTitle: "REST Requester")
+        HomeView(navTitle: "REST Requester", searchText: HomeView_Previews.$searchText, requestData: $rData, navPath: $navPath)
     }
 }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @Environment(\.dismiss) var dismiss
+    
     @State var inMemoryOnly:Bool = true
     @State var storeLocal:Bool = false
     @State var useiCloud:Bool = false
@@ -22,7 +24,8 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Store Data")) {
+                Section(header: Text("Store Data"), footer: Text("Disabling iCloud and Local storage will prevent all data from saving.")) {
+                    #if !RELEASE
                     Toggle("Store Data in-memory only", isOn: $inMemoryOnly)
                         .onChange(of: inMemoryOnly, initial: false) {
                             if inMemoryOnly {
@@ -34,13 +37,7 @@ struct SettingsView: View {
                             }
                             dumpState()
                         }
-                    Toggle("Store Data Locally", isOn: $storeLocal)
-                        .onChange(of: storeLocal, initial: false) {
-                            withAnimation {
-                                storeInFilesApp = false
-                            }
-                            dumpState()
-                        }
+                    #endif
                     Toggle("Store Data on iCloud", isOn: $useiCloud)
                         .onChange(of: useiCloud, initial: false) {
                             withAnimation {
@@ -48,8 +45,10 @@ struct SettingsView: View {
                             }
                             dumpState()
                         }
-                    Toggle("Store Data in file", isOn: $storeInFilesApp)
-                    
+                    Toggle("Store Data Locally", isOn: $storeLocal)
+                        .onChange(of: storeLocal, initial: false) {
+                            dumpState()
+                        }
                     //TODO: Create clear data locally, on iCloud, and last stored location in Files app buttons
                 }
                 Section(header: Text("Sharing")) {
@@ -78,6 +77,17 @@ struct SettingsView: View {
             }
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "sidebar.left")
+                            .foregroundStyle(Color.white)
+                    }
+                }
+            }
         }
     }
     
